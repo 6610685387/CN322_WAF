@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalog</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>You are logged in successfully!</h1>
+<h2>comment Section</h2>
+<form method="POST" action="/submit_comment">
+    <label for="comment">Enter your comment:</label><br>
+    <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br>
+    <button type="submit">Submit Comment</button>
+</form>
+{% endblock %}
