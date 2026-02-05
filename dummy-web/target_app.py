@@ -1,6 +1,12 @@
-from flask import Flask, request, render_template_string
+from flask import Flask, request, render_template_string, abort
 
 app = Flask(__name__)
+
+@app.before_request
+def block_direct_access():
+    # อนุญาตเฉพาะ request ที่มาจาก WAF
+    if request.headers.get("X-From-WAF") != "true":
+        abort(403)
 
 # หน้า Home แบบง่ายๆ
 @app.route('/')
