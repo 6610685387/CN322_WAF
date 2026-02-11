@@ -1,3 +1,4 @@
+import html
 from flask import Flask, request, abort, render_template_string
 import sqlite3
 from sqli_detector import SQLDetector
@@ -32,6 +33,19 @@ def waf(path):
     # --- 🛡️ ZONE ตรวจจับความปลอดภัย ---
     for param_name, data in user_inputs:
 
+        # 2. ตรวจสอบ XSS (Cross-Site Scripting)
+        if xss_detector.check_xss(data):
+            print(f"🚨 BLOCKED: XSS detected in param '{param_name}': {data}")
+
+            log_attack(
+                ip=request.remote_addr,
+                attack_type="XSS",
+                payload=data,
+                path=path,
+            )
+            safe_data = html.escape(data)
+            return f"🚫 Blocked by WAF: XSS detected in '{safe_data}'", 403
+        
         # 1. ตรวจสอบ SQL Injection
         if sql_detector.check_sqli(data):
             print(f"🚨 BLOCKED: SQL Injection detected in param '{param_name}': {data}")
@@ -43,19 +57,9 @@ def waf(path):
                 payload=data,
                 path=path,
             )
-            return f"🚫 Blocked by WAF: SQL Injection detected in '{data}'", 403
+            safe_data = html.escape(data)
+            return f"🚫 Blocked by WAF: SQL Injection detected in '{safe_data}'", 403
 
-        # 2. ตรวจสอบ XSS (Cross-Site Scripting)
-        if xss_detector.check_xss(data):
-            print(f"🚨 BLOCKED: XSS detected in param '{param_name}': {data}")
-
-            log_attack(
-                ip=request.remote_addr,
-                attack_type="XSS",
-                payload=data,
-                path=path,
-            )
-            return f"🚫 Blocked by WAF: XSS detected in '{data}'", 403
 
     # --- ลบ Loop ช่วงล่างทิ้งไปได้เลย เพราะเราเช็คและ Log ไปข้างบนแล้ว ---
 
