@@ -53,7 +53,6 @@ from flask import Flask, request, abort
 =======
 from flask import Flask, request, abort, render_template_string
 import sqlite3
->>>>>>> c40ff08da552fbe138c2012b4d1e4057ff3069ee
 from sqli_detector import SQLDetector
 from xss_detector import XSSDetector
 import requests
