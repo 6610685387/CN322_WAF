@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # from flask import Flask, request, abort
 # from sqli_detector import SQLDetector
 # import requests
@@ -49,9 +50,16 @@
 
 
 from flask import Flask, request, abort
+=======
+from flask import Flask, request, abort, render_template_string
+import sqlite3
+>>>>>>> c40ff08da552fbe138c2012b4d1e4057ff3069ee
 from sqli_detector import SQLDetector
 from xss_detector import XSSDetector
 import requests
+
+from logger import log_attack
+from database import init_db, DB_NAME
 
 app = Flask(__name__)
 
@@ -90,6 +98,23 @@ def waf(path):
 
     # ------------------------------------
 
+<<<<<<< HEAD
+=======
+    # Input checking
+    for data in user_inputs:
+        if detector.check_sqli(data):
+            print("SQL Injection Detected: ", data) 
+
+            log_attack(
+                ip=request.remote_addr,
+                attack_type="SQL Injection",
+                payload=data,
+                path=path
+            )
+
+            return f"🚫 Blocked by WAF: SQL Injection detected", 403
+            
+>>>>>>> c40ff08da552fbe138c2012b4d1e4057ff3069ee
     target_url = f"{TARGET_URL}/{path}"
 
     # Forward request ถ้าปลอดภัย
@@ -108,6 +133,48 @@ def waf(path):
         return "❌ Error: Target Web Server (Port 5001) is down.", 502
 
 
+@app.route('/logs')
+def view_logs():
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM attack_logs ORDER BY timestamp DESC")
+    logs = cursor.fetchall()
+
+    conn.close()
+
+    html = """
+    <h2>🚨 WAF Attack Logs</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>IP</th>
+            <th>Attack Type</th>
+            <th>Payload</th>
+            <th>Path</th>
+            <th>Time</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log[0] }}</td>
+            <td>{{ log[1] }}</td>
+            <td>{{ log[2] }}</td>
+            <td>{{ log[3] }}</td>
+            <td>{{ log[4] }}</td>
+            <td>{{ log[5] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    """
+
+    return render_template_string(html, logs=logs)
+
+
 if __name__ == "__main__":
+<<<<<<< HEAD
     print("-- WAF Running on Port 5000 (Protected SQLi + XSS) --")
+=======
+    print("-- Running WAF --")
+    init_db()
+>>>>>>> c40ff08da552fbe138c2012b4d1e4057ff3069ee
     app.run(port=5000, debug=True)
