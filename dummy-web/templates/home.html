@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>🔐 Login (SQL Injection Target)</h3>
+<form action="/login" method="get">
+    <input type="text" name="username" placeholder="Enter username">
+    <button type="submit">Login</button>
+</form>
+
+<hr>
+
+<h3>🔎 Search (XSS Target)</h3>
+<form action="/search" method="get">
+    <input type="text" name="q" placeholder="Search...">
+    <button type="submit">Search</button>
+</form>
+
+<hr>
+<h3>Log Checker</h3>
+<a href="/logs">View Logs</a>
+
+{% endblock %}
