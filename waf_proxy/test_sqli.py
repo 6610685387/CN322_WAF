@@ -1,22 +1,23 @@
-# เปลี่ยนการ import เป็นไฟล์ใหม่
+
 from sqli_detector import SQLDetector
 
-# สร้าง Instance ของคลาสใหม่
+
 waf = SQLDetector()
 
-print("--- 🕵️‍♀️ เริ่มทดสอบ SQL Injection Hunter Rules ---")
+
+print("--- SQL Injection Hunter Rules ---")
 
 sql_tests = [
-    # เคสปกติ (ต้องผ่าน)
+    # เคสปกติ
     ("admin", False),
     ("hello world", False),
-    # เคสโจมตี (ต้องบล็อก)
+    # เคสโจมตี
     ("admin' OR 1=1 --", True),  # Basic Bypass
     ("UNION SELECT user, pass", True),  # Union Based
     ("SELECT * FROM users", True),  # Direct Select
-    ("DELETE FROM users", True),  # 🆕 Destructive (ของใหม่)
-    ("INSERT INTO users VALUES", True),  # 🆕 Injection (ของใหม่)
-    ("admin'; EXEC xp_cmdshell", True),  # 🆕 Command Exec (ของใหม่)
+    ("DELETE FROM users", True),  # Destructive 
+    ("INSERT INTO users VALUES", True),  # Injection
+    ("admin'; EXEC xp_cmdshell", True),  # Command Exec
 ]
 
 print(f"{'INPUT':<30} | {'STATUS':<10} | {'RESULT'}")

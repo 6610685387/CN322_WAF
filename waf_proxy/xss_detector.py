@@ -3,9 +3,7 @@ from urllib.parse import unquote
 
 
 class XSSDetector:
-    def __init__(self):
-        # รวม Pattern การโจมตี XSS จาก payloads.txt
-        # เราใช้ re.VERBOSE เพื่อให้เขียน Regex แยกบรรทัดได้ อ่านง่ายขึ้น
+    def __init__(self):       
         self.xss_pattern = re.compile(
             r"""
             (
@@ -30,11 +28,11 @@ class XSSDetector:
             return False
 
         # 1. Decode ข้อมูลก่อน (เช่นแปลง %3Cscript%3E เป็น <script>)
-        # เพื่อกัน Hacker แอบส่งโค้ดแบบ Encoded มา
+        
         decoded_string = unquote(input_string)
 
         # 2. ตรวจสอบด้วย Regex
         if self.xss_pattern.search(decoded_string):
-            return True  # 🚨 เจอโจร XSS!
+            return True  
 
-        return False  # ✅ ปลอดภัย
+        return False 
