@@ -4,48 +4,50 @@ import sqlite3
 import requests
 import re
 from datetime import datetime
+from sqli_detector import SQLDetector
+from xss_detector import XSSDetector
 
 app = Flask(__name__)
 
 TARGET_URL = "http://127.0.0.1:5001"
 DB_NAME = "waf_logs.db"
 
-# ==============================
-# 🔎 SQL Injection Detector
-# ==============================
-class SQLDetector:
-    def __init__(self):
-        self.patterns = [
-            r"(\bUNION\b|\bSELECT\b|\bDROP\b|\bINSERT\b|\bDELETE\b|\bUPDATE\b)",
-            r"(--|#|;)",
-            r"(\bOR\b|\bAND\b).*(=)",
-            r"('|\")\s*=\s*('|\")",
-        ]
+# # ==============================
+# # 🔎 SQL Injection Detector
+# # ==============================
+# class SQLDetector:
+#     def __init__(self):
+#         self.patterns = [
+#             r"(\bUNION\b|\bSELECT\b|\bDROP\b|\bINSERT\b|\bDELETE\b|\bUPDATE\b)",
+#             r"(--|#|;)",
+#             r"(\bOR\b|\bAND\b).*(=)",
+#             r"('|\")\s*=\s*('|\")",
+#         ]
 
-    def check_sqli(self, data):
-        for pattern in self.patterns:
-            if re.search(pattern, data, re.IGNORECASE):
-                return True
-        return False
+#     def check_sqli(self, data):
+#         for pattern in self.patterns:
+#             if re.search(pattern, data, re.IGNORECASE):
+#                 return True
+#         return False
 
 
-# ==============================
-# 🔎 XSS Detector
-# ==============================
-class XSSDetector:
-    def __init__(self):
-        self.patterns = [
-            r"<script.*?>.*?</script>",
-            r"on\w+\s*=",
-            r"javascript:",
-            r"<.*?>"
-        ]
+# # ==============================
+# # 🔎 XSS Detector
+# # ==============================
+# class XSSDetector:
+#     def __init__(self):
+#         self.patterns = [
+#             r"<script.*?>.*?</script>",
+#             r"on\w+\s*=",
+#             r"javascript:",
+#             r"<.*?>"
+#         ]
 
-    def check_xss(self, data):
-        for pattern in self.patterns:
-            if re.search(pattern, data, re.IGNORECASE):
-                return True
-        return False
+#     def check_xss(self, data):
+#         for pattern in self.patterns:
+#             if re.search(pattern, data, re.IGNORECASE):
+#                 return True
+#         return False
 
 
 # ==============================
@@ -102,7 +104,7 @@ def waf(path):
     for key, value in request.form.items():
         user_inputs.append((key, value))
 
-    # 🔥 Security Zone
+    # Security Zone
     for param_name, data in user_inputs:
 
         # XSS Check
