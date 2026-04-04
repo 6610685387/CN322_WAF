@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAF Admin Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        /* Adjust for fixed navbar */
+        .chart-container {
+            position: relative;
+            height: 40vh;
+            /* ความสูงของกราฟ */
+            width: 100%;
+            /* ใช้เต็มความกว้าง column */
+            display: flex;
+            justify-content: center;
+            /* จัดกราฟ horizontal center */
+            align-items: center;
+            /* จัดกราฟ vertical center */
+        }
+
+        .stats-card {
+            margin-bottom: 20px;
+        }
+
+        .log-entry {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+
+        .ip-management-form {
+            margin-top: 20px;
+        }
+
+        .payload-cell {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/admin">WAF Admin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/logs">Attack Logs</a>
+                    </li>
+                </ul>
+                <!-- ปุ่ม Back to Target App -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="http://127.0.0.1:5000/">← Back to Target App</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <h1 class="mb-4">Dashboard Overview</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card stats-card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Attacks</h5>
+                        <p class="card-text display-5" id="total-attacks">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stats-card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Banned IPs</h5>
+                        <p class="card-text display-5" id="banned-ips-count">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stats-card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Recent Attacks (24h)</h5>
+                        <p class="card-text display-5" id="recent-attacks-24h">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Attack Types Distribution
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="attackTypeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        IP Management
+                    </div>
+                    <div class="card-body">
+                        <form id="banIpForm" class="ip-management-form">
+                            <div class="mb-3">
+                                <label for="ip_to_ban" class="form-label">IP Address to Ban</label>
+                                <input type="text" class="form-control" id="ip_to_ban" name="ip_address"
+                                    placeholder="e.g., 192.168.1.100" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ban_reason" class="form-label">Reason (Optional)</label>
+                                <input type="text" class="form-control" id="ban_reason" name="reason"
+                                    placeholder="e.g., Suspicious activity">
+                            </div>
+                            <button type="submit" class="btn btn-danger me-2">Ban IP</button>
+                            <button type="button" id="unbanBtn" class="btn btn-warning">Unban Selected IP</button>
+                        </form>
+                        <div id="banMessage" class="mt-3 text-success"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Currently Banned IPs
+                    </div>
+                    <div class="card-body">
+                        <ul id="banned-ips-list" class="list-group">
+                            <!-- Banned IPs will be listed here -->
+                            <li class="list-group-item text-center">Loading banned IPs...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+
+    <script>
+        // Helper function to sanitize HTML content
+        function sanitizeHTML(str) {
+            if (!str) return '';
+            const element = document.createElement('div');
+            element.innerText = str;
+            return element.innerHTML;
+        }
+
+        let attackTypeChart = null;
+
+        async function fetchStats() {
+            try {
+                const response = await fetch('/api/stats');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+
+                document.getElementById('total-attacks').textContent = data.total_attacks || '--';
+                document.getElementById('banned-ips-count').textContent = data.banned_ips_count || '--';
+                document.getElementById('recent-attacks-24h').textContent = data.recent_attacks_24h || '--';
+
+                updateAttackTypeChart(data.attacks_by_type);
+                fetchBannedIps();
+            } catch (error) {
+                console.error('Error fetching stats:', error);
+            }
+        }
+
+        function updateAttackTypeChart(attackTypes) {
+            const ctx = document.getElementById('attackTypeChart').getContext('2d');
+            const labels = Object.keys(attackTypes);
+            const dataValues = Object.values(attackTypes);
+
+            if (attackTypeChart) attackTypeChart.destroy();
+
+            attackTypeChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Number of Attacks',
+                        data: dataValues,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)', 'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)', 'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)', 'rgba(255, 159, 64, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        async function fetchBannedIps() {
+            const listEl = document.getElementById('banned-ips-list');
+            listEl.innerHTML = '<li class="list-group-item text-center">Loading banned IPs...</li>';
+
+            try {
+                const response = await fetch('/api/banned_ips');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const bannedIps = await response.json();
+
+                listEl.innerHTML = '';
+                if (bannedIps.length === 0) {
+                    listEl.innerHTML = '<li class="list-group-item text-center">No IPs are currently banned.</li>';
+                } else {
+                    bannedIps.forEach(ipData => {
+                        const li = document.createElement('li');
+                        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                        const ip = sanitizeHTML(ipData.ip);
+                        const reason = sanitizeHTML(ipData.reason || '');
+                        const time = ipData.ban_timestamp ? new Date(ipData.ban_timestamp).toLocaleString('th-TH', { timeZone: 'Asia/Bangkok' }) : 'N/A';
+                        li.innerHTML = `
+                            <div>
+                                <strong>${ip}</strong>
+                                ${reason ? `<br><small>Reason: ${reason}</small>` : ''}
+                                <br><small>Banned on: ${time}</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-warning unban-btn" data-ip="${ip}">Unban</button>
+                        `;
+                        listEl.appendChild(li);
+                    });
+                }
+            } catch (error) {
+                listEl.innerHTML = `<li class="list-group-item text-center text-danger">Failed to load banned IPs: ${error.message}</li>`;
+            }
+        }
+
+        // Function to manage IPs (ban/unban)
+        async function manageIP(ip, action, reason = '') {
+            const messageDiv = document.getElementById('banMessage');
+            try {
+                const response = await fetch('/admin/manage_ip', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ip_address: ip, action: action, reason: reason })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    messageDiv.textContent = result.message;
+                    messageDiv.className = 'mt-3 text-success';
+                    fetchStats();
+                } else {
+                    messageDiv.textContent = `Error: ${result.message}`;
+                    messageDiv.className = 'mt-3 text-danger';
+                }
+            } catch (error) {
+                console.error(`Error ${action} IP:`, error);
+                messageDiv.textContent = `An unexpected error occurred.`;
+                messageDiv.className = 'mt-3 text-danger';
+            }
+        }
+
+        // Ban form submit
+        document.getElementById('banIpForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const ip = document.getElementById('ip_to_ban').value;
+            const reason = document.getElementById('ban_reason').value;
+            if (!ip) {
+                const messageDiv = document.getElementById('banMessage');
+                messageDiv.textContent = 'IP Address is required.';
+                messageDiv.className = 'mt-3 text-danger';
+                return;
+            }
+            await manageIP(ip, 'ban', reason);
+            document.getElementById('ip_to_ban').value = '';
+            document.getElementById('ban_reason').value = '';
+        });
+
+        // Unban button in form
+        document.getElementById('unbanBtn').addEventListener('click', async function () {
+            const ip = document.getElementById('ip_to_ban').value;
+            if (!ip) { alert('Please enter an IP to unban.'); return; }
+            if (!confirm(`Are you sure you want to unban IP: ${ip}?`)) return;
+            await manageIP(ip, 'unban');
+            document.getElementById('ip_to_ban').value = '';
+        });
+
+        // Unban button in banned list (delegated)
+        document.getElementById('banned-ips-list').addEventListener('click', async function (e) {
+            if (e.target.classList.contains('unban-btn')) {
+                const ip = e.target.getAttribute('data-ip');
+                if (!ip) return;
+                if (!confirm(`Are you sure you want to unban IP: ${ip}?`)) return;
+                await manageIP(ip, 'unban');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', fetchStats);
+    </script>
+</body>
+
+</html>
