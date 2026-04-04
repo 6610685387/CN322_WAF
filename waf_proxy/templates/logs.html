@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAF Attack Logs</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        /* Adjust for fixed navbar */
+        .log-entry {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+
+        .table-responsive {
+            margin-top: 20px;
+        }
+
+        .payload-cell {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/admin">WAF Admin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/logs">Attack Logs</a>
+                    </li>
+                </ul>
+                <!-- ปุ่ม Back to Target App -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="http://127.0.0.1:5000/">← Back to Target App</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <h1 class="mb-4">Attack Logs</h1>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>IP Address</th>
+                        <th>Attack Type</th>
+                        <th>Score</th>
+                        <th>Payload</th>
+                    </tr>
+                </thead>
+                <tbody id="logsTableBody">
+                    <!-- Log entries will be loaded here -->
+                    <tr>
+                        <td colspan="5" class="text-center">Loading attack logs...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination controls would go here if implemented -->
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Helper function to sanitize HTML content
+        function sanitizeHTML(str) {
+            const element = document.createElement('div');
+            element.innerText = str; // Use textContent to escape HTML entities
+            return element.innerHTML;
+        }
+
+        // Function to fetch and display logs
+        async function fetchLogs() {
+            const logsTableBody = document.getElementById('logsTableBody');
+            logsTableBody.innerHTML = '<tr><td colspan="5" class="text-center">Loading attack logs...</td></tr>'; // Show loading indicator
+
+            try {
+                const response = await fetch('/api/logs'); // Call the new API endpoint
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const logs = await response.json();
+
+                logsTableBody.innerHTML = ''; // Clear loading indicator
+
+                if (logs.length === 0) {
+                    const row = logsTableBody.insertRow();
+                    const cell = row.insertCell(0);
+                    cell.colSpan = 5;
+                    cell.className = 'text-center';
+                    cell.textContent = 'No attack logs found.';
+                } else {
+                    logs.forEach(log => {
+                        const row = logsTableBody.insertRow();
+                        row.innerHTML = `
+                            <td>${new Date(log.timestamp).toLocaleString()}</td>
+                            <td>${sanitizeHTML(log.ip_address)}</td>
+                            <td>${sanitizeHTML(log.attack_type)}</td>
+                            <td>${log.score}</td>
+                            <td class="payload-cell" title="${sanitizeHTML(log.payload)}">${sanitizeHTML(log.payload)}</td>
+                        `;
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching logs:', error);
+                logsTableBody.innerHTML = `<tr><td colspan="5" class="text-center text-danger">Failed to load attack logs: ${error.message}</td></tr>`;
+            }
+        }
+
+        // Fetch logs when the page loads
+        document.addEventListener('DOMContentLoaded', fetchLogs);
+    </script>
+</body>
+
+</html>
