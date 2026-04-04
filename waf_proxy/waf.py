@@ -1,52 +1,17 @@
 import html
 from flask import Flask, request, render_template
-import sqlite3
 import requests
-import re
-from datetime import datetime
+from werkzeug.middleware.proxy_fix import ProxyFix  # ✅ เพิ่มตรงนี้
 from sqli_detector import SQLDetector
 from xss_detector import XSSDetector
+from database_manager import add_log, is_ip_banned
 
 app = Flask(__name__)
 
+# ✅ ทำให้รองรับ X-Forwarded-For จาก proxy (production-ready)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
+
 TARGET_URL = "http://127.0.0.1:5001"
-DB_NAME = "waf_logs.db"
-
-
-# ==============================
-# 🗃️ Database Setup
-# ==============================
-def init_db():
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS attack_logs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            ip TEXT,
-            attack_type TEXT,
-            payload TEXT,
-            path TEXT,
-            timestamp TEXT
-        )
-    """)
-
-    conn.commit()
-    conn.close()
-
-
-def log_attack(ip, attack_type, payload, path):
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        INSERT INTO attack_logs (ip, attack_type, payload, path, timestamp)
-        VALUES (?, ?, ?, ?, ?)
-    """, (ip, attack_type, payload, path, datetime.now()))
-
-    conn.commit()
-    conn.close()
-
 
 # ==============================
 # 🛡️ WAF Core
@@ -57,13 +22,26 @@ xss_detector = XSSDetector()
 @app.route("/", defaults={"path": ""}, methods=["GET", "POST"])
 @app.route("/<path:path>", methods=["GET", "POST"])
 def waf(path):
-    print(f"\n--- New Request to: /{path} ---")
+    print(f"--- New Request to: /{path} ---")
+
+    # ✅ ตรวจ IP ก่อนเลย
+    client_ip = request.headers.get("X-Forwarded-For", request.remote_addr)
+
+    if is_ip_banned(client_ip):
+        print(f"⛔ BLOCKED (BANNED IP): {client_ip}")
+        return f"🚫 Your IP ({client_ip}) is banned.", 403
+
+    # ✅ ใช้ IP แบบ production-ready
+    ip_address = request.remote_addr
+    print(f"Client IP: {ip_address}")
 
     user_inputs = []
 
+    # Collect GET parameters
     for key, value in request.args.items():
         user_inputs.append((key, value))
 
+    # Collect POST form data
     for key, value in request.form.items():
         user_inputs.append((key, value))
 
@@ -74,10 +52,11 @@ def waf(path):
         if xss_detector.check_xss(data):
             print(f"🚨 BLOCKED: XSS in '{param_name}': {data}")
 
-            log_attack(
-                ip=request.remote_addr,
+            add_log(
+                ip_address=ip_address,  # ✅ ใช้ตัวแปรนี้
                 attack_type="XSS",
                 payload=data,
+                score=85,
                 path=path,
             )
 
@@ -88,10 +67,11 @@ def waf(path):
         if sql_detector.check_sqli(data):
             print(f"🚨 BLOCKED: SQLi in '{param_name}': {data}")
 
-            log_attack(
-                ip=request.remote_addr,
+            add_log(
+                ip_address=ip_address,  # ✅ ใช้ตัวแปรนี้
                 attack_type="SQL Injection",
                 payload=data,
+                score=90,
                 path=path,
             )
 
@@ -115,29 +95,13 @@ def waf(path):
         return response.text, response.status_code
 
     except requests.exceptions.ConnectionError:
-        return "❌ Error: Target Web Server (Port 5001) is down.", 502
+        print(f"❌ Error: Target Web Server at {TARGET_URL} is down.")
+        return "❌ Error: Target Web Server is down.", 502
 
 
 # ==============================
-# 📜 View Logs
-# ==============================
-
-@app.route("/logs")
-def view_logs():
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
-
-    cursor.execute("SELECT * FROM attack_logs ORDER BY timestamp DESC")
-    logs = cursor.fetchall()
-
-    conn.close()
-
-    return render_template("waf_log_page.html", logs=logs)
-
-# ==============================
-# 🚀 Run
+# 🚀 Run WAF Proxy
 # ==============================
 if __name__ == "__main__":
-    print("-- WAF Running on Port 5000 (Protected SQLi + XSS) --")
-    init_db()
+    print("-- WAF Proxy Running on Port 5000 --")
     app.run(port=5000, debug=True)

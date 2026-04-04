@@ -3,3 +3,5 @@ venv-dummy/
 __pycache__/
 .DS_Store
 waf_logs.db
+cn322_waf_venv
+default.db
