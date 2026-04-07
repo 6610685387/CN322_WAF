@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from waf_proxy.database_manager import init_db, add_log, is_ip_banned, ban_ip, unban_ip, get_attack_stats, get_banned_ips, get_all_logs # Import get_all_logs
+from database_manager import init_db, add_log, is_ip_banned, ban_ip, unban_ip, get_attack_stats, get_banned_ips, get_all_logs # Import get_all_logs
 import os
 from datetime import datetime, timedelta # Import timedelta
 

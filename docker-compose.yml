@@ -1,30 +1,11 @@
-version: '3.8'
-
 services:
-<<<<<<< HEAD
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: waf_user
-      POSTGRES_PASSWORD: waf_password # Consider using secrets for production
-      POSTGRES_DB: waf_db
-    ports:
-      - "5432:5432" # Expose PostgreSQL port
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
-=======
   dummy_web:
-    # เว้น 2 เคาะ
     build:
       context: ./dummy-web
     networks:
       - waf_net
 
   waf:
-    # เว้น 2 เคาะ (ตรงกับ dummy_web)
     build:
       context: ./waf_proxy
     depends_on:
@@ -32,8 +13,18 @@ volumes:
     networks:
       - waf_net
 
+  admin_panel:
+    build:
+      context: ./waf_proxy
+    command: [ "python", "admin_dashboard.py" ]
+    ports:
+      - "5005:5005"
+    depends_on:
+      - waf
+    networks:
+      - waf_net
+
   nginx:
-    # เว้น 2 เคาะ (ตรงกับ waf และ dummy_web)
     image: nginx:latest
     ports:
       - "80:80"
@@ -47,7 +38,5 @@ volumes:
       - waf_net
 
 networks:
-  # ไม่ต้องเว้นวรรค (อยู่ชิดขอบซ้ายสุด ตรงกับ services)
   waf_net:
     driver: bridge
->>>>>>> docker

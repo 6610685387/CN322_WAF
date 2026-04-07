@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 import os
 
 # Use DATABASE_URL from environment variables, default to a local SQLite for initial setup if not found
-DATABASE_URL = "postgresql://postgres:Cnplanner%40123456789@db.hswrzwcegmghgeixfkor.supabase.co:5432/postgres?sslmode=require"
+DATABASE_URL = "postgresql://postgres.hswrzwcegmghgeixfkor:Cnplanner%40123456789@aws-1-ap-northeast-1.pooler.supabase.com:6543/postgres"
 print(f"🔥 DATABASE_URL = {DATABASE_URL}")                                                                                    # In a real scenario with docker-compose, DATABASE_URL should be set to connect to the postgres service.
 
 engine = create_engine(DATABASE_URL)
