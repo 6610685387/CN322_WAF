@@ -9,7 +9,7 @@ from xss_detector import XSSDetector
 
 app = Flask(__name__)
 
-TARGET_URL = "http://127.0.0.1:5001"
+TARGET_URL = "http://dummy_web:5001"
 DB_NAME = "waf_logs.db"
 
 
@@ -140,4 +140,4 @@ def view_logs():
 if __name__ == "__main__":
     print("-- WAF Running on Port 5000 (Protected SQLi + XSS) --")
     init_db()
-    app.run(port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
