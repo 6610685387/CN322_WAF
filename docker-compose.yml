@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+<<<<<<< HEAD
   db:
     image: postgres:13
     environment:
@@ -14,3 +15,39 @@ services:
 
 volumes:
   postgres_data:
+=======
+  dummy_web:
+    # เว้น 2 เคาะ
+    build:
+      context: ./dummy-web
+    networks:
+      - waf_net
+
+  waf:
+    # เว้น 2 เคาะ (ตรงกับ dummy_web)
+    build:
+      context: ./waf_proxy
+    depends_on:
+      - dummy_web
+    networks:
+      - waf_net
+
+  nginx:
+    # เว้น 2 เคาะ (ตรงกับ waf และ dummy_web)
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - waf
+    networks:
+      - waf_net
+
+networks:
+  # ไม่ต้องเว้นวรรค (อยู่ชิดขอบซ้ายสุด ตรงกับ services)
+  waf_net:
+    driver: bridge
+>>>>>>> docker
