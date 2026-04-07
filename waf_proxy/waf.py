@@ -11,7 +11,45 @@ app = Flask(__name__)
 # ✅ ทำให้รองรับ X-Forwarded-For จาก proxy (production-ready)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
 
-TARGET_URL = "http://127.0.0.1:5001"
+# TARGET_URL = "http://127.0.0.1:5001"
+TARGET_URL = "http://dummy_web:5001"
+DB_NAME = "waf_logs.db"
+
+
+# ==============================
+# 🗃️ Database Setup
+# ==============================
+# def init_db():
+#     conn = sqlite3.connect(DB_NAME)
+#     cursor = conn.cursor()
+
+#     cursor.execute("""
+#         CREATE TABLE IF NOT EXISTS attack_logs (
+#             id INTEGER PRIMARY KEY AUTOINCREMENT,
+#             ip TEXT,
+#             attack_type TEXT,
+#             payload TEXT,
+#             path TEXT,
+#             timestamp TEXT
+#         )
+#     """)
+
+#     conn.commit()
+#     conn.close()
+
+
+# def log_attack(ip, attack_type, payload, path):
+#     conn = sqlite3.connect(DB_NAME)
+#     cursor = conn.cursor()
+
+#     cursor.execute("""
+#         INSERT INTO attack_logs (ip, attack_type, payload, path, timestamp)
+#         VALUES (?, ?, ?, ?, ?)
+#     """, (ip, attack_type, payload, path, datetime.now()))
+
+#     conn.commit()
+#     conn.close()
+
 
 # ==============================
 # 🛡️ WAF Core
@@ -103,5 +141,6 @@ def waf(path):
 # 🚀 Run WAF Proxy
 # ==============================
 if __name__ == "__main__":
-    print("-- WAF Proxy Running on Port 5000 --")
-    app.run(port=5000, debug=True)
+    print("-- WAF Running on Port 5000 (Protected SQLi + XSS) --")
+    # init_db()
+    app.run(host="0.0.0.0", port=5000, debug=True)
