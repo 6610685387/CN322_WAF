@@ -2,8 +2,8 @@ import html
 from flask import Flask, request, render_template
 import requests
 from werkzeug.middleware.proxy_fix import ProxyFix  # ✅ เพิ่มตรงนี้
-from sqli_detector import SQLDetector
-from xss_detector import XSSDetector
+from detectors.sqli_detector import SQLDetector
+from detectors.xss_detector import XSSDetector
 from database_manager import add_log, is_ip_banned
 
 app = Flask(__name__)

@@ -5,3 +5,4 @@ __pycache__/
 waf_logs.db
 cn322_waf_venv
 default.db
+.venv

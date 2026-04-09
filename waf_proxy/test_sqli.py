@@ -1,5 +1,5 @@
 
-from sqli_detector import SQLDetector
+from detectors.sqli_detector import SQLDetector
 
 
 waf = SQLDetector()
