@@ -4,6 +4,7 @@ import requests
 from werkzeug.middleware.proxy_fix import ProxyFix  # ✅ เพิ่มตรงนี้
 from detectors.sqli_detector import SQLDetector
 from detectors.xss_detector import XSSDetector
+from detectors import scan_payload
 from database_manager import add_log, is_ip_banned
 
 app = Flask(__name__)
@@ -11,44 +12,9 @@ app = Flask(__name__)
 # ✅ ทำให้รองรับ X-Forwarded-For จาก proxy (production-ready)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
 
-# TARGET_URL = "http://127.0.0.1:5001"
-TARGET_URL = "http://dummy_web:5001"
-DB_NAME = "waf_logs.db"
-
-
-# ==============================
-# 🗃️ Database Setup
-# ==============================
-# def init_db():
-#     conn = sqlite3.connect(DB_NAME)
-#     cursor = conn.cursor()
-
-#     cursor.execute("""
-#         CREATE TABLE IF NOT EXISTS attack_logs (
-#             id INTEGER PRIMARY KEY AUTOINCREMENT,
-#             ip TEXT,
-#             attack_type TEXT,
-#             payload TEXT,
-#             path TEXT,
-#             timestamp TEXT
-#         )
-#     """)
-
-#     conn.commit()
-#     conn.close()
-
-
-# def log_attack(ip, attack_type, payload, path):
-#     conn = sqlite3.connect(DB_NAME)
-#     cursor = conn.cursor()
-
-#     cursor.execute("""
-#         INSERT INTO attack_logs (ip, attack_type, payload, path, timestamp)
-#         VALUES (?, ?, ?, ?, ?)
-#     """, (ip, attack_type, payload, path, datetime.now()))
-
-#     conn.commit()
-#     conn.close()
+TARGET_URL = "http://127.0.0.1:5001"
+# TARGET_URL = "http://dummy_web:5001"
+# DB_NAME = "waf_logs.db"
 
 
 # ==============================
@@ -85,36 +51,26 @@ def waf(path):
 
     # Security Zone
     for param_name, data in user_inputs:
+        # ✅ 2. เรียกใช้ระบบตรวจสอบขั้นสูง (รวม Normalization + Scoring)
+        result = scan_payload(data)
 
-        # XSS Check
-        if xss_detector.check_xss(data):
-            print(f"🚨 BLOCKED: XSS in '{param_name}': {data}")
+        if result["is_blocked"]:
+            print(f"🚨 BLOCKED: {result['attack_type']} in '{param_name}'")
+            print(f"📈 Score: {result['total_score']} | Payload: {data}")
+            print(f"🧹 Cleaned: {result['cleaned_payload']}")
 
+            # ✅ 3. ส่งค่าไปบันทึก Log (ใช้คะแนนจริง และประเภทการโจมตีที่ตรวจพบจริง)
             add_log(
-                ip_address=ip_address,  # ✅ ใช้ตัวแปรนี้
-                attack_type="XSS",
+                ip_address=ip_address,
+                attack_type=result["attack_type"],
                 payload=data,
-                score=85,
+                score=result["total_score"], # ใช้คะแนนที่คำนวณมาได้จริง ไม่ใช่ค่า Hardcode
                 path=path,
             )
 
             safe_data = html.escape(data)
-            return f"🚫 Blocked by WAF: XSS detected in '{safe_data}'", 403
+            return f"🚫 Blocked by WAF: {result['attack_type']} detected in '{safe_data}'", 403
 
-        # SQLi Check
-        if sql_detector.check_sqli(data):
-            print(f"🚨 BLOCKED: SQLi in '{param_name}': {data}")
-
-            add_log(
-                ip_address=ip_address,  # ✅ ใช้ตัวแปรนี้
-                attack_type="SQL Injection",
-                payload=data,
-                score=90,
-                path=path,
-            )
-
-            safe_data = html.escape(data)
-            return f"🚫 Blocked by WAF: SQL Injection detected in '{safe_data}'", 403
 
     # ✅ Clean → Forward
     print("✅ Traffic Clean. Forwarding...")
