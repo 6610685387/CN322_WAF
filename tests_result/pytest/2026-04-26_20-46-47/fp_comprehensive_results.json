@@ -1,0 +1,923 @@
+{
+  "test": "fp_comprehensive_results",
+  "timestamp": "2026-04-26_20-46-47",
+  "waf_url": "https://localhost",
+  "count": 61,
+  "results": [
+    {
+      "text": "select your favorite item from the list",
+      "description": "select...from ใน UX copy",
+      "category": "select_from",
+      "is_fp": false,
+      "score": 3,
+      "sqli_score": 3,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        30
+      ]
+    },
+    {
+      "text": "please select one option from below",
+      "description": "select...from ในคำสั่ง",
+      "category": "select_from",
+      "is_fp": false,
+      "score": 3,
+      "sqli_score": 3,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        30
+      ]
+    },
+    {
+      "text": "I want to select a book from the shelf",
+      "description": "select...from ในชีวิตประจำวัน",
+      "category": "select_from",
+      "is_fp": false,
+      "score": 3,
+      "sqli_score": 3,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        30
+      ]
+    },
+    {
+      "text": "SELECT * FROM documentation",
+      "description": "SELECT * FROM ในเอกสาร tech",
+      "category": "select_from",
+      "is_fp": true,
+      "score": 30,
+      "sqli_score": 30,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        30
+      ]
+    },
+    {
+      "text": "SQL SELECT FROM WHERE tutorial",
+      "description": "SQL tutorial ใน search query",
+      "category": "select_from",
+      "is_fp": true,
+      "score": 16,
+      "sqli_score": 16,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        30
+      ]
+    },
+    {
+      "text": "Can you select the best course from the catalog?",
+      "description": "select...from ในการศึกษา",
+      "category": "select_from",
+      "is_fp": false,
+      "score": 3,
+      "sqli_score": 3,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        30
+      ]
+    },
+    {
+      "text": "drop me a message anytime",
+      "description": "drop ในความหมาย ส่ง message",
+      "category": "drop_keyword",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        15
+      ]
+    },
+    {
+      "text": "I'll drop by tomorrow",
+      "description": "drop ในความหมาย แวะมา",
+      "category": "drop_keyword",
+      "is_fp": false,
+      "score": 11,
+      "sqli_score": 4,
+      "xss_score": 7,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        15
+      ]
+    },
+    {
+      "text": "drop the idea and move on",
+      "description": "drop ในความหมาย ยกเลิก",
+      "category": "drop_keyword",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        15
+      ]
+    },
+    {
+      "text": "ลองดูว่า drop ไหมไม่",
+      "description": "drop ในบริบทภาษาไทย",
+      "category": "drop_keyword",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        15
+      ]
+    },
+    {
+      "text": "raindrop falling slowly",
+      "description": "raindrop = compound word",
+      "category": "drop_keyword",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "backdrop design for the show",
+      "description": "backdrop = compound word",
+      "category": "drop_keyword",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "O'Connor",
+      "description": "ชื่อ Irish apostrophe เดียว",
+      "category": "apostrophe",
+      "is_fp": false,
+      "score": 7,
+      "sqli_score": 0,
+      "xss_score": 7,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "O'Brien from Dublin",
+      "description": "ชื่อ Irish + from keyword",
+      "category": "apostrophe",
+      "is_fp": false,
+      "score": 7,
+      "sqli_score": 0,
+      "xss_score": 7,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        25
+      ]
+    },
+    {
+      "text": "Tom's blog post from yesterday",
+      "description": "possessive (odd) + from",
+      "category": "apostrophe",
+      "is_fp": false,
+      "score": 7,
+      "sqli_score": 0,
+      "xss_score": 7,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "I'm from the select team",
+      "description": "odd quote + from + select",
+      "category": "apostrophe",
+      "is_fp": false,
+      "score": 7,
+      "sqli_score": 0,
+      "xss_score": 7,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        15,
+        30
+      ]
+    },
+    {
+      "text": "don't select from dropdown",
+      "description": "odd quote + select + from",
+      "category": "apostrophe",
+      "is_fp": false,
+      "score": 7,
+      "sqli_score": 0,
+      "xss_score": 7,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        20,
+        35
+      ]
+    },
+    {
+      "text": "she can't see where I'm from",
+      "description": "2 quotes (even) + where + from",
+      "category": "apostrophe",
+      "is_fp": false,
+      "score": 6,
+      "sqli_score": 6,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        5,
+        9
+      ]
+    },
+    {
+      "text": "it's where I'm from",
+      "description": "2 quotes (even) + where + from",
+      "category": "apostrophe",
+      "is_fp": false,
+      "score": 6,
+      "sqli_score": 6,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        5,
+        9
+      ]
+    },
+    {
+      "text": "it's fine, I won't update it",
+      "description": "2 quotes (even) + update (no set)",
+      "category": "apostrophe",
+      "is_fp": false,
+      "score": 4,
+      "sqli_score": 4,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "Tom's and Mary's favorite book",
+      "description": "2 odd quotes (even total) = OK",
+      "category": "apostrophe",
+      "is_fp": false,
+      "score": 4,
+      "sqli_score": 4,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "insert a new line into the text",
+      "description": "insert...into ในการเขียน",
+      "category": "insert_into",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "INSERT record INTO table (tutorial)",
+      "description": "INSERT INTO ในเอกสาร SQL",
+      "category": "insert_into",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "please insert the key into the lock",
+      "description": "insert...into ในชีวิตประจำวัน",
+      "category": "insert_into",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "insert this USB drive into the port",
+      "description": "insert...into กับอุปกรณ์",
+      "category": "insert_into",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "UPDATE SET explained in the docs",
+      "description": "update...set ในเอกสาร",
+      "category": "update_set",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "please update and set the new value",
+      "description": "update...set ในคำสั่ง user",
+      "category": "update_set",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "update my profile and set a new picture",
+      "description": "update...set ใน app",
+      "category": "update_set",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "update the firmware and set defaults",
+      "description": "update...set ในคู่มือเทคนิค",
+      "category": "update_set",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "price is 0x100 baht (=256)",
+      "description": "hex ในราคา",
+      "category": "hex_value",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        15
+      ]
+    },
+    {
+      "text": "0xDEAD code smell",
+      "description": "hex ในคำศัพท์ prog",
+      "category": "hex_value",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        15
+      ]
+    },
+    {
+      "text": "memory address: 0xFF00",
+      "description": "hex ใน memory address",
+      "category": "hex_value",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        15
+      ]
+    },
+    {
+      "text": "CSS color: #FF5733",
+      "description": "CSS #hex → ไม่ควร block",
+      "category": "hex_value",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "color 0xRRGGBB format",
+      "description": "0xRRGGBB ไม่ match hex",
+      "category": "hex_value",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "function() call convention in JS",
+      "description": "function() ใน tutorial",
+      "category": "xss_func",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "use a callback function() here",
+      "description": "function() ใน callback",
+      "category": "xss_func",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "JavaScript function() basics",
+      "description": "function() ใน JS",
+      "category": "xss_func",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        20
+      ]
+    },
+    {
+      "text": "main function in C language",
+      "description": "function โดยไม่มี ()",
+      "category": "xss_func",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "the add() function returns a value",
+      "description": "add() ≠ function()",
+      "category": "xss_func",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "it's where I'm from",
+      "description": "~8 คะแนน: ไม่ควร block",
+      "category": "near_boundary",
+      "is_fp": false,
+      "score": 6,
+      "sqli_score": 6,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        5,
+        9
+      ]
+    },
+    {
+      "text": "she can't find where I'm from",
+      "description": "~8 คะแนน: ไม่ควร block",
+      "category": "near_boundary",
+      "is_fp": false,
+      "score": 6,
+      "sqli_score": 6,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        5,
+        9
+      ]
+    },
+    {
+      "text": "I can't update my profile now",
+      "description": "odd quote + update ~7",
+      "category": "near_boundary",
+      "is_fp": false,
+      "score": 7,
+      "sqli_score": 0,
+      "xss_score": 7,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        5,
+        12
+      ]
+    },
+    {
+      "text": "ฉันเลือกสินค้าจากร้านค้า",
+      "description": "Thai: เลือก ≠ SELECT",
+      "category": "thai_only",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        5
+      ]
+    },
+    {
+      "text": "อัปเดตข้อมูลส่วนตัว",
+      "description": "Thai: อัปเดต ≠ UPDATE",
+      "category": "thai_only",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        5
+      ]
+    },
+    {
+      "text": "ลบรายการนี้ออกได้เลย",
+      "description": "Thai: ลบ ≠ DELETE",
+      "category": "thai_only",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        5
+      ]
+    },
+    {
+      "text": "แทรกรูปภาพลงในเอกสาร",
+      "description": "Thai: แทรก ≠ INSERT",
+      "category": "thai_only",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        5
+      ]
+    },
+    {
+      "text": "ดร็อปไฟล์ลงในโฟลเดอร์",
+      "description": "Thai: ดร็อป ≠ DROP",
+      "category": "thai_only",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "SQL SELECT FROM WHERE tutorial",
+      "description": "SQL tutorial ใน search",
+      "category": "dev_content",
+      "is_fp": true,
+      "score": 16,
+      "sqli_score": 16,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        30
+      ]
+    },
+    {
+      "text": "how to use INSERT INTO in MySQL",
+      "description": "MySQL tutorial ใน search",
+      "category": "dev_content",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        10,
+        30
+      ]
+    },
+    {
+      "text": "shell script tutorial",
+      "description": "script ≠ XSS",
+      "category": "dev_content",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "Python script for automation",
+      "description": "script ใน Python context",
+      "category": "dev_content",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "UNION of two mathematical sets",
+      "description": "UNION ในคณิตศาสตร์",
+      "category": "dev_content",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "benchmark test results for API",
+      "description": "benchmark ≠ BENCHMARK()",
+      "category": "dev_content",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "alice_wonderland",
+      "description": "username ธรรมดา",
+      "category": "username",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "user.name@company.co.th",
+      "description": "email as username",
+      "category": "username",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "select_all_user",
+      "description": "username มีคำ select (underscore)",
+      "category": "username",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "drop_table_mike",
+      "description": "username มีคำ drop (underscore)",
+      "category": "username",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "O'Brien",
+      "description": "username มี apostrophe (Irish name)",
+      "category": "username",
+      "is_fp": false,
+      "score": 7,
+      "sqli_score": 0,
+      "xss_score": 7,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        5,
+        15
+      ]
+    },
+    {
+      "text": "CSS background: #1a2b3c",
+      "description": "CSS hex color #1a2b3c",
+      "category": "css_color",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "hex color code #FF5733 in CSS",
+      "description": "hex color code ใน CSS",
+      "category": "css_color",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    },
+    {
+      "text": "rgba(255, 99, 71, 0.5) color",
+      "description": "rgba ไม่ใช่ hex",
+      "category": "css_color",
+      "is_fp": false,
+      "score": 0,
+      "sqli_score": 0,
+      "xss_score": 0,
+      "http_status": null,
+      "http_ms": null,
+      "expected_range": [
+        0,
+        9
+      ]
+    }
+  ]
+}

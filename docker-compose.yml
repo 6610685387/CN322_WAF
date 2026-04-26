@@ -2,6 +2,8 @@ services:
   dummy_web:
     build:
       context: ./dummy-web
+    ports:
+      - "5001:5001"
     networks:
       - waf_net
 
@@ -10,13 +12,15 @@ services:
       context: ./waf_proxy
     depends_on:
       - dummy_web
+    environment:
+      - GUNICORN_WORKERS=4
     networks:
       - waf_net
 
   admin_panel:
     build:
       context: ./waf_proxy
-    command: [ "python", "admin_dashboard.py" ]
+    command: gunicorn admin_dashboard:app -b 0.0.0.0:5005 -w 2 -k gthread --threads 2 --timeout 30
     depends_on:
       - waf
     networks:

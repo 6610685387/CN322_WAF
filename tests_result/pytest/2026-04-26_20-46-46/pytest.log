@@ -1,0 +1,29 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.6, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\MSII\cn322waf\venv\Scripts\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.6', 'Platform': 'Windows-11-10.0.26200-SP0', 'Packages': {'pytest': '9.0.3', 'pluggy': '1.6.0'}, 'Plugins': {'html': '4.2.0', 'metadata': '3.1.1'}}
+rootdir: C:\Users\MSII\cn322waf
+plugins: html-4.2.0, metadata-3.1.1
+collecting ... collected 7 items
+
+tests/security/pytest/test_1_sqli.py::test_sqli_detection PASSED         [ 14%]
+tests/security/pytest/test_1_sqli.py::test_sqli_post PASSED              [ 28%]
+tests/security/pytest/test_2_xss.py::test_xss_detection PASSED           [ 42%]
+tests/security/pytest/test_2_xss.py::test_xss_post PASSED                [ 57%]
+tests/security/pytest/test_3_false_positive.py::test_false_positive PASSED [ 71%]
+tests/security/pytest/test_4_fp_comprehensive.py::test_comprehensive_false_positives PASSED [ 85%]
+tests/security/pytest/test_4_fp_comprehensive.py::test_fp_comprehensive_pytest PASSED [100%]
+
+============================== warnings summary ===============================
+tests/security/pytest/test_1_sqli.py::test_sqli_detection
+tests/security/pytest/test_1_sqli.py::test_sqli_post
+tests/security/pytest/test_2_xss.py::test_xss_detection
+tests/security/pytest/test_2_xss.py::test_xss_post
+tests/security/pytest/test_3_false_positive.py::test_false_positive
+  C:\Users\MSII\cn322waf\venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: C:\Users\MSII\cn322waf\tests_result\pytest\2026-04-26_20-46-46\junit.xml -
+- Generated html report: file:///C:/Users/MSII/cn322waf/tests_result/pytest/2026-04-26_20-46-46/report.html -
+======================= 7 passed, 5 warnings in 21.03s ========================

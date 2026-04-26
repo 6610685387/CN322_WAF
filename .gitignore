@@ -6,3 +6,5 @@ waf_logs.db
 cn322_waf_venv
 default.db
 .venv
+venv/
+tests_result/sqlmap/
