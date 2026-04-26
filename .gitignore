@@ -8,5 +8,5 @@ default.db
 .venv
 venv/
 tests_result/sqlmap/
-tests_result/k6/stress_raw.json
-tests_result/k6/stress_summary.json
+tests_result/k6/2026-04-26_20-48-28/baseline_raw.json
+tests_result/k6/2026-04-26_20-48-28/stress_summary.json
