@@ -48,9 +48,9 @@ def api_stats():
 
 @app.route("/api/logs")
 def api_logs():
-    """API endpoint to fetch attack logs from database."""
     try:
-        logs = get_all_logs()
+        limit = request.args.get("limit", 20, type=int)
+        logs = get_all_logs(limit=limit)
         return jsonify(logs)
     except Exception as e:
         print(f"Error in /api/logs: {e}")
