@@ -1,0 +1,1567 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: C:\Users\MSII\cn322waf\tests\performance\k6\stress.js
+        output: json (C:\Users\MSII\cn322waf\tests_result\k6\2026-04-26_20-48-28\stress_raw.json)
+
+     scenarios: (100.00%) 1 scenario, 100 max VUs, 4m30s max duration (incl. graceful stop):
+              * default: Up to 100 looping VUs for 4m0s over 5 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+running (0m01.0s), 001/100 VUs, 8 complete and 0 interrupted iterations
+default   [   0% ] 001/100 VUs  0m01.0s/4m00.0s
+
+running (0m01.9s), 001/100 VUs, 17 complete and 0 interrupted iterations
+default   [   1% ] 001/100 VUs  0m01.9s/4m00.0s
+
+running (0m02.9s), 001/100 VUs, 26 complete and 0 interrupted iterations
+default   [   1% ] 001/100 VUs  0m02.9s/4m00.0s
+
+running (0m04.0s), 002/100 VUs, 40 complete and 0 interrupted iterations
+default   [   2% ] 002/100 VUs  0m04.0s/4m00.0s
+
+running (0m04.9s), 002/100 VUs, 56 complete and 0 interrupted iterations
+default   [   2% ] 002/100 VUs  0m04.9s/4m00.0s
+
+running (0m05.9s), 002/100 VUs, 74 complete and 0 interrupted iterations
+default   [   2% ] 002/100 VUs  0m05.9s/4m00.0s
+
+running (0m06.9s), 003/100 VUs, 94 complete and 0 interrupted iterations
+default   [   3% ] 003/100 VUs  0m06.9s/4m00.0s
+
+running (0m07.9s), 003/100 VUs, 123 complete and 0 interrupted iterations
+default   [   3% ] 003/100 VUs  0m07.9s/4m00.0s
+
+running (0m08.9s), 003/100 VUs, 151 complete and 0 interrupted iterations
+default   [   4% ] 003/100 VUs  0m08.9s/4m00.0s
+
+running (0m09.9s), 003/100 VUs, 178 complete and 0 interrupted iterations
+default   [   4% ] 003/100 VUs  0m09.9s/4m00.0s
+
+running (0m10.9s), 004/100 VUs, 213 complete and 0 interrupted iterations
+default   [   5% ] 004/100 VUs  0m10.9s/4m00.0s
+
+running (0m11.9s), 004/100 VUs, 252 complete and 0 interrupted iterations
+default   [   5% ] 004/100 VUs  0m11.9s/4m00.0s
+
+running (0m12.9s), 004/100 VUs, 289 complete and 0 interrupted iterations
+default   [   5% ] 004/100 VUs  0m12.9s/4m00.0s
+
+running (0m13.9s), 005/100 VUs, 330 complete and 0 interrupted iterations
+default   [   6% ] 005/100 VUs  0m13.9s/4m00.0s
+
+running (0m14.9s), 005/100 VUs, 377 complete and 0 interrupted iterations
+default   [   6% ] 005/100 VUs  0m14.9s/4m00.0s
+
+running (0m15.9s), 005/100 VUs, 425 complete and 0 interrupted iterations
+default   [   7% ] 005/100 VUs  0m15.9s/4m00.0s
+
+running (0m16.9s), 006/100 VUs, 470 complete and 0 interrupted iterations
+default   [   7% ] 006/100 VUs  0m16.9s/4m00.0s
+
+running (0m17.9s), 006/100 VUs, 526 complete and 0 interrupted iterations
+default   [   7% ] 006/100 VUs  0m17.9s/4m00.0s
+
+running (0m18.9s), 006/100 VUs, 580 complete and 0 interrupted iterations
+default   [   8% ] 006/100 VUs  0m18.9s/4m00.0s
+
+running (0m19.9s), 006/100 VUs, 636 complete and 0 interrupted iterations
+default   [   8% ] 006/100 VUs  0m19.9s/4m00.0s
+
+running (0m20.9s), 007/100 VUs, 701 complete and 0 interrupted iterations
+default   [   9% ] 007/100 VUs  0m20.9s/4m00.0s
+
+running (0m21.9s), 007/100 VUs, 765 complete and 0 interrupted iterations
+default   [   9% ] 007/100 VUs  0m21.9s/4m00.0s
+
+running (0m23.0s), 007/100 VUs, 829 complete and 0 interrupted iterations
+default   [  10% ] 007/100 VUs  0m23.0s/4m00.0s
+
+running (0m23.9s), 008/100 VUs, 895 complete and 0 interrupted iterations
+default   [  10% ] 008/100 VUs  0m23.9s/4m00.0s
+
+running (0m24.9s), 008/100 VUs, 969 complete and 0 interrupted iterations
+default   [  10% ] 008/100 VUs  0m24.9s/4m00.0s
+
+running (0m25.9s), 008/100 VUs, 1045 complete and 0 interrupted iterations
+default   [  11% ] 008/100 VUs  0m25.9s/4m00.0s
+
+running (0m26.9s), 009/100 VUs, 1119 complete and 0 interrupted iterations
+default   [  11% ] 009/100 VUs  0m26.9s/4m00.0s
+
+running (0m27.9s), 009/100 VUs, 1191 complete and 0 interrupted iterations
+default   [  12% ] 009/100 VUs  0m27.9s/4m00.0s
+
+running (0m28.9s), 009/100 VUs, 1276 complete and 0 interrupted iterations
+default   [  12% ] 009/100 VUs  0m28.9s/4m00.0s
+
+running (0m29.9s), 009/100 VUs, 1360 complete and 0 interrupted iterations
+default   [  12% ] 009/100 VUs  0m29.9s/4m00.0s
+
+running (0m30.9s), 010/100 VUs, 1444 complete and 0 interrupted iterations
+default   [  13% ] 010/100 VUs  0m30.9s/4m00.0s
+
+running (0m31.9s), 011/100 VUs, 1537 complete and 0 interrupted iterations
+default   [  13% ] 011/100 VUs  0m31.9s/4m00.0s
+
+running (0m32.9s), 011/100 VUs, 1640 complete and 0 interrupted iterations
+default   [  14% ] 011/100 VUs  0m32.9s/4m00.0s
+
+running (0m33.9s), 012/100 VUs, 1745 complete and 0 interrupted iterations
+default   [  14% ] 012/100 VUs  0m33.9s/4m00.0s
+
+running (0m34.9s), 013/100 VUs, 1844 complete and 0 interrupted iterations
+default   [  15% ] 013/100 VUs  0m34.9s/4m00.0s
+
+running (0m35.9s), 013/100 VUs, 1962 complete and 0 interrupted iterations
+default   [  15% ] 013/100 VUs  0m35.9s/4m00.0s
+
+running (0m36.9s), 014/100 VUs, 2088 complete and 0 interrupted iterations
+default   [  15% ] 014/100 VUs  0m36.9s/4m00.0s
+
+running (0m37.9s), 015/100 VUs, 2223 complete and 0 interrupted iterations
+default   [  16% ] 015/100 VUs  0m37.9s/4m00.0s
+
+running (0m38.9s), 015/100 VUs, 2362 complete and 0 interrupted iterations
+default   [  16% ] 015/100 VUs  0m38.9s/4m00.0s
+
+running (0m39.9s), 016/100 VUs, 2509 complete and 0 interrupted iterations
+default   [  17% ] 016/100 VUs  0m39.9s/4m00.0s
+
+running (0m40.9s), 017/100 VUs, 2657 complete and 0 interrupted iterations
+default   [  17% ] 017/100 VUs  0m40.9s/4m00.0s
+
+running (0m41.9s), 017/100 VUs, 2819 complete and 0 interrupted iterations
+default   [  17% ] 017/100 VUs  0m41.9s/4m00.0s
+
+running (0m42.9s), 018/100 VUs, 2982 complete and 0 interrupted iterations
+default   [  18% ] 018/100 VUs  0m42.9s/4m00.0s
+
+running (0m43.9s), 019/100 VUs, 3148 complete and 0 interrupted iterations
+default   [  18% ] 019/100 VUs  0m43.9s/4m00.0s
+
+running (0m44.9s), 019/100 VUs, 3324 complete and 0 interrupted iterations
+default   [  19% ] 019/100 VUs  0m44.9s/4m00.0s
+
+running (0m45.9s), 020/100 VUs, 3514 complete and 0 interrupted iterations
+default   [  19% ] 020/100 VUs  0m45.9s/4m00.0s
+
+running (0m46.9s), 021/100 VUs, 3699 complete and 0 interrupted iterations
+default   [  20% ] 021/100 VUs  0m46.9s/4m00.0s
+
+running (0m47.9s), 021/100 VUs, 3894 complete and 0 interrupted iterations
+default   [  20% ] 021/100 VUs  0m47.9s/4m00.0s
+
+running (0m48.9s), 022/100 VUs, 4100 complete and 0 interrupted iterations
+default   [  20% ] 022/100 VUs  0m48.9s/4m00.0s
+
+running (0m49.9s), 023/100 VUs, 4308 complete and 0 interrupted iterations
+default   [  21% ] 023/100 VUs  0m49.9s/4m00.0s
+
+running (0m50.9s), 023/100 VUs, 4520 complete and 0 interrupted iterations
+default   [  21% ] 023/100 VUs  0m50.9s/4m00.0s
+
+running (0m51.9s), 024/100 VUs, 4738 complete and 0 interrupted iterations
+default   [  22% ] 024/100 VUs  0m51.9s/4m00.0s
+
+running (0m52.9s), 025/100 VUs, 4961 complete and 0 interrupted iterations
+default   [  22% ] 025/100 VUs  0m52.9s/4m00.0s
+
+running (0m53.9s), 025/100 VUs, 5188 complete and 0 interrupted iterations
+default   [  22% ] 025/100 VUs  0m53.9s/4m00.0s
+
+running (0m54.9s), 026/100 VUs, 5427 complete and 0 interrupted iterations
+default   [  23% ] 026/100 VUs  0m54.9s/4m00.0s
+
+running (0m55.9s), 027/100 VUs, 5651 complete and 0 interrupted iterations
+default   [  23% ] 027/100 VUs  0m55.9s/4m00.0s
+
+running (0m56.9s), 027/100 VUs, 5903 complete and 0 interrupted iterations
+default   [  24% ] 027/100 VUs  0m56.9s/4m00.0s
+
+running (0m57.9s), 028/100 VUs, 6167 complete and 0 interrupted iterations
+default   [  24% ] 028/100 VUs  0m57.9s/4m00.0s
+
+running (0m58.9s), 029/100 VUs, 6423 complete and 0 interrupted iterations
+default   [  25% ] 029/100 VUs  0m58.9s/4m00.0s
+
+running (0m59.9s), 029/100 VUs, 6694 complete and 0 interrupted iterations
+default   [  25% ] 029/100 VUs  0m59.9s/4m00.0s
+
+running (1m00.9s), 030/100 VUs, 6945 complete and 0 interrupted iterations
+default   [  25% ] 030/100 VUs  1m00.9s/4m00.0s
+
+running (1m01.9s), 031/100 VUs, 7226 complete and 0 interrupted iterations
+default   [  26% ] 031/100 VUs  1m01.9s/4m00.0s
+
+running (1m02.9s), 031/100 VUs, 7505 complete and 0 interrupted iterations
+default   [  26% ] 031/100 VUs  1m02.9s/4m00.0s
+
+running (1m03.9s), 032/100 VUs, 7800 complete and 0 interrupted iterations
+default   [  27% ] 032/100 VUs  1m03.9s/4m00.0s
+
+running (1m04.9s), 033/100 VUs, 8077 complete and 0 interrupted iterations
+default   [  27% ] 033/100 VUs  1m04.9s/4m00.0s
+
+running (1m05.9s), 033/100 VUs, 8372 complete and 0 interrupted iterations
+default   [  27% ] 033/100 VUs  1m05.9s/4m00.0s
+
+running (1m06.9s), 034/100 VUs, 8685 complete and 0 interrupted iterations
+default   [  28% ] 034/100 VUs  1m06.9s/4m00.0s
+
+running (1m07.9s), 035/100 VUs, 8996 complete and 0 interrupted iterations
+default   [  28% ] 035/100 VUs  1m07.9s/4m00.0s
+
+running (1m08.9s), 035/100 VUs, 9313 complete and 0 interrupted iterations
+default   [  29% ] 035/100 VUs  1m08.9s/4m00.0s
+
+running (1m09.9s), 036/100 VUs, 9637 complete and 0 interrupted iterations
+default   [  29% ] 036/100 VUs  1m09.9s/4m00.0s
+
+running (1m10.9s), 037/100 VUs, 9976 complete and 0 interrupted iterations
+default   [  30% ] 037/100 VUs  1m10.9s/4m00.0s
+
+running (1m11.9s), 037/100 VUs, 10320 complete and 0 interrupted iterations
+default   [  30% ] 037/100 VUs  1m11.9s/4m00.0s
+
+running (1m12.9s), 038/100 VUs, 10654 complete and 0 interrupted iterations
+default   [  30% ] 038/100 VUs  1m12.9s/4m00.0s
+
+running (1m13.9s), 039/100 VUs, 11002 complete and 0 interrupted iterations
+default   [  31% ] 039/100 VUs  1m13.9s/4m00.0s
+
+running (1m14.9s), 039/100 VUs, 11337 complete and 0 interrupted iterations
+default   [  31% ] 039/100 VUs  1m14.9s/4m00.0s
+
+running (1m15.9s), 040/100 VUs, 11697 complete and 0 interrupted iterations
+default   [  32% ] 040/100 VUs  1m15.9s/4m00.0s
+
+running (1m16.9s), 041/100 VUs, 12055 complete and 0 interrupted iterations
+default   [  32% ] 041/100 VUs  1m16.9s/4m00.0s
+
+running (1m17.9s), 041/100 VUs, 12429 complete and 0 interrupted iterations
+default   [  32% ] 041/100 VUs  1m17.9s/4m00.0s
+
+running (1m18.9s), 042/100 VUs, 12825 complete and 0 interrupted iterations
+default   [  33% ] 042/100 VUs  1m18.9s/4m00.0s
+
+running (1m19.9s), 043/100 VUs, 13208 complete and 0 interrupted iterations
+default   [  33% ] 043/100 VUs  1m19.9s/4m00.0s
+
+running (1m20.9s), 043/100 VUs, 13615 complete and 0 interrupted iterations
+default   [  34% ] 043/100 VUs  1m20.9s/4m00.0s
+
+running (1m21.9s), 044/100 VUs, 14014 complete and 0 interrupted iterations
+default   [  34% ] 044/100 VUs  1m21.9s/4m00.0s
+
+running (1m22.9s), 045/100 VUs, 14429 complete and 0 interrupted iterations
+default   [  35% ] 045/100 VUs  1m22.9s/4m00.0s
+
+running (1m23.9s), 045/100 VUs, 14847 complete and 0 interrupted iterations
+default   [  35% ] 045/100 VUs  1m23.9s/4m00.0s
+
+running (1m24.9s), 046/100 VUs, 15258 complete and 0 interrupted iterations
+default   [  35% ] 046/100 VUs  1m24.9s/4m00.0s
+
+running (1m25.9s), 047/100 VUs, 15688 complete and 0 interrupted iterations
+default   [  36% ] 047/100 VUs  1m25.9s/4m00.0s
+
+running (1m26.9s), 047/100 VUs, 16110 complete and 0 interrupted iterations
+default   [  36% ] 047/100 VUs  1m26.9s/4m00.0s
+
+running (1m27.9s), 048/100 VUs, 16545 complete and 0 interrupted iterations
+default   [  37% ] 048/100 VUs  1m27.9s/4m00.0s
+
+running (1m28.9s), 049/100 VUs, 17000 complete and 0 interrupted iterations
+default   [  37% ] 049/100 VUs  1m28.9s/4m00.0s
+
+running (1m29.9s), 049/100 VUs, 17422 complete and 0 interrupted iterations
+default   [  37% ] 049/100 VUs  1m29.9s/4m00.0s
+
+running (1m30.9s), 050/100 VUs, 17888 complete and 0 interrupted iterations
+default   [  38% ] 050/100 VUs  1m30.9s/4m00.0s
+
+running (1m31.9s), 051/100 VUs, 18348 complete and 0 interrupted iterations
+default   [  38% ] 051/100 VUs  1m31.9s/4m00.0s
+
+running (1m32.9s), 052/100 VUs, 18836 complete and 0 interrupted iterations
+default   [  39% ] 052/100 VUs  1m32.9s/4m00.0s
+
+running (1m33.9s), 053/100 VUs, 19298 complete and 0 interrupted iterations
+default   [  39% ] 053/100 VUs  1m33.9s/4m00.0s
+
+running (1m34.9s), 054/100 VUs, 19795 complete and 0 interrupted iterations
+default   [  40% ] 054/100 VUs  1m34.9s/4m00.0s
+
+running (1m35.9s), 054/100 VUs, 20247 complete and 0 interrupted iterations
+default   [  40% ] 054/100 VUs  1m35.9s/4m00.0s
+
+running (1m36.9s), 055/100 VUs, 20750 complete and 0 interrupted iterations
+default   [  40% ] 055/100 VUs  1m36.9s/4m00.0s
+
+running (1m37.9s), 056/100 VUs, 21251 complete and 0 interrupted iterations
+default   [  41% ] 056/100 VUs  1m37.9s/4m00.0s
+
+running (1m38.9s), 057/100 VUs, 21740 complete and 0 interrupted iterations
+default   [  41% ] 057/100 VUs  1m38.9s/4m00.0s
+
+running (1m39.9s), 058/100 VUs, 22202 complete and 0 interrupted iterations
+default   [  42% ] 058/100 VUs  1m39.9s/4m00.0s
+
+running (1m40.9s), 059/100 VUs, 22204 complete and 0 interrupted iterations
+default   [  42% ] 059/100 VUs  1m40.9s/4m00.0s
+
+running (1m41.9s), 059/100 VUs, 22204 complete and 0 interrupted iterations
+default   [  42% ] 059/100 VUs  1m41.9s/4m00.0s
+
+running (1m42.9s), 060/100 VUs, 22410 complete and 0 interrupted iterations
+default   [  43% ] 060/100 VUs  1m42.9s/4m00.0s
+
+running (1m43.9s), 061/100 VUs, 22964 complete and 0 interrupted iterations
+default   [  43% ] 061/100 VUs  1m43.9s/4m00.0s
+
+running (1m44.9s), 062/100 VUs, 23523 complete and 0 interrupted iterations
+default   [  44% ] 062/100 VUs  1m44.9s/4m00.0s
+
+running (1m45.9s), 063/100 VUs, 24072 complete and 0 interrupted iterations
+default   [  44% ] 063/100 VUs  1m45.9s/4m00.0s
+
+running (1m46.9s), 064/100 VUs, 24640 complete and 0 interrupted iterations
+default   [  45% ] 064/100 VUs  1m46.9s/4m00.0s
+
+running (1m47.9s), 064/100 VUs, 25151 complete and 0 interrupted iterations
+default   [  45% ] 064/100 VUs  1m47.9s/4m00.0s
+
+running (1m48.9s), 065/100 VUs, 25750 complete and 0 interrupted iterations
+default   [  45% ] 065/100 VUs  1m48.9s/4m00.0s
+
+running (1m49.9s), 066/100 VUs, 26308 complete and 0 interrupted iterations
+default   [  46% ] 066/100 VUs  1m49.9s/4m00.0s
+
+running (1m50.9s), 067/100 VUs, 26918 complete and 0 interrupted iterations
+default   [  46% ] 067/100 VUs  1m50.9s/4m00.0s
+
+running (1m51.9s), 068/100 VUs, 27537 complete and 0 interrupted iterations
+default   [  47% ] 068/100 VUs  1m51.9s/4m00.0s
+
+running (1m52.9s), 069/100 VUs, 28057 complete and 0 interrupted iterations
+default   [  47% ] 069/100 VUs  1m52.9s/4m00.0s
+
+running (1m53.9s), 069/100 VUs, 28642 complete and 0 interrupted iterations
+default   [  47% ] 069/100 VUs  1m53.9s/4m00.0s
+
+running (1m54.9s), 070/100 VUs, 28644 complete and 0 interrupted iterations
+default   [  48% ] 070/100 VUs  1m54.9s/4m00.0s
+
+running (1m55.9s), 071/100 VUs, 28645 complete and 0 interrupted iterations
+default   [  48% ] 071/100 VUs  1m55.9s/4m00.0s
+
+running (1m56.9s), 072/100 VUs, 28646 complete and 0 interrupted iterations
+default   [  49% ] 072/100 VUs  1m56.9s/4m00.0s
+
+running (1m57.9s), 073/100 VUs, 28647 complete and 0 interrupted iterations
+default   [  49% ] 073/100 VUs  1m57.9s/4m00.0s
+
+running (1m58.9s), 074/100 VUs, 28648 complete and 0 interrupted iterations
+default   [  50% ] 074/100 VUs  1m58.9s/4m00.0s
+
+running (1m59.9s), 074/100 VUs, 28648 complete and 0 interrupted iterations
+default   [  50% ] 074/100 VUs  1m59.9s/4m00.0s
+
+running (2m00.9s), 075/100 VUs, 28649 complete and 0 interrupted iterations
+default   [  50% ] 075/100 VUs  2m00.9s/4m00.0s
+
+running (2m01.9s), 076/100 VUs, 28650 complete and 0 interrupted iterations
+default   [  51% ] 076/100 VUs  2m01.9s/4m00.0s
+
+running (2m02.9s), 077/100 VUs, 28650 complete and 0 interrupted iterations
+default   [  51% ] 077/100 VUs  2m02.9s/4m00.0s
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Ca%20href%3D%27javascript%3Aalert%281%29%27%3EXSS%3C%2Fa%3E\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%3B%20DROP%20TABLE%20users--\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=admin%27--\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UN%2F%2A%2A%2FION%20SE%2F%2A%2A%2FLECT%201%2C2--\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=0x27206f7220%200x313d31\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Ca%20href%3D%27javascript%3Aalert%281%29%27%3EXSS%3C%2Fa%3E\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=0x27206f7220%200x313d31\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%20%271%27%3D%271\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=admin%27--\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%26%2360%3Bscript%26%2362%3Balert%281%29%26%2360%3B%2Fscript%26%2362%3B\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20ALL%20SELECT%20NULL%2CNULL--\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+
+running (2m03.9s), 078/100 VUs, 28707 complete and 0 interrupted iterations
+default   [  52% ] 078/100 VUs  2m03.9s/4m00.0s
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%2527%20OR%20%25271%2527%253D%25271\": request timeout"
+time="2026-04-26T20:51:28+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+
+running (2m04.9s), 079/100 VUs, 28720 complete and 0 interrupted iterations
+default   [  52% ] 079/100 VUs  2m04.9s/4m00.0s
+time="2026-04-26T20:51:29+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+
+running (2m05.9s), 079/100 VUs, 28721 complete and 0 interrupted iterations
+default   [  52% ] 079/100 VUs  2m05.9s/4m00.0s
+time="2026-04-26T20:51:31+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%20%271%27%3D%271\": request timeout"
+
+running (2m06.9s), 080/100 VUs, 28722 complete and 0 interrupted iterations
+default   [  53% ] 080/100 VUs  2m06.9s/4m00.0s
+time="2026-04-26T20:51:32+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+
+running (2m07.9s), 081/100 VUs, 28723 complete and 0 interrupted iterations
+default   [  53% ] 081/100 VUs  2m07.9s/4m00.0s
+time="2026-04-26T20:51:33+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+
+running (2m08.9s), 082/100 VUs, 28723 complete and 0 interrupted iterations
+default   [  54% ] 082/100 VUs  2m08.9s/4m00.0s
+
+running (2m09.9s), 083/100 VUs, 28724 complete and 0 interrupted iterations
+default   [  54% ] 083/100 VUs  2m09.9s/4m00.0s
+time="2026-04-26T20:51:34+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+
+running (2m10.9s), 084/100 VUs, 28725 complete and 0 interrupted iterations
+default   [  55% ] 084/100 VUs  2m10.9s/4m00.0s
+time="2026-04-26T20:51:35+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20%271%27%3D%271\": request timeout"
+
+running (2m11.9s), 084/100 VUs, 28726 complete and 0 interrupted iterations
+default   [  55% ] 084/100 VUs  2m11.9s/4m00.0s
+time="2026-04-26T20:51:36+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+
+running (2m12.9s), 085/100 VUs, 28727 complete and 0 interrupted iterations
+default   [  55% ] 085/100 VUs  2m12.9s/4m00.0s
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%201%3D1--\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cmarquee%20onstart%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cmarquee%20onstart%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cmarquee%20onstart%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%26%2360%3Bscript%26%2362%3Balert%281%29%26%2360%3B%2Fscript%26%2362%3B\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20SLEEP%285%29--\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%20UNION%20SELECT%201%2C2%2C3--\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+
+running (2m13.9s), 086/100 VUs, 28728 complete and 0 interrupted iterations
+default   [  56% ] 086/100 VUs  2m13.9s/4m00.0s
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Ca%20href%3D%27javascript%3Aalert%281%29%27%3EXSS%3C%2Fa%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%20%271%27%3D%271\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:38+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:39+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+
+running (2m14.9s), 087/100 VUs, 28799 complete and 0 interrupted iterations
+default   [  56% ] 087/100 VUs  2m14.9s/4m00.0s
+time="2026-04-26T20:51:39+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+
+running (2m15.9s), 088/100 VUs, 28800 complete and 0 interrupted iterations
+default   [  57% ] 088/100 VUs  2m15.9s/4m00.0s
+time="2026-04-26T20:51:40+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:41+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%20UNION%20SELECT%201%2C2%2C3--\": request timeout"
+
+running (2m16.9s), 089/100 VUs, 28802 complete and 0 interrupted iterations
+default   [  57% ] 089/100 VUs  2m16.9s/4m00.0s
+time="2026-04-26T20:51:41+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%20UNION%20SELECT%201%2C2%2C3--\": request timeout"
+time="2026-04-26T20:51:42+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+
+running (2m17.9s), 089/100 VUs, 28804 complete and 0 interrupted iterations
+default   [  57% ] 089/100 VUs  2m17.9s/4m00.0s
+time="2026-04-26T20:51:42+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--\": request timeout"
+
+running (2m18.9s), 090/100 VUs, 28805 complete and 0 interrupted iterations
+default   [  58% ] 090/100 VUs  2m18.9s/4m00.0s
+time="2026-04-26T20:51:43+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:44+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+
+running (2m19.9s), 091/100 VUs, 28807 complete and 0 interrupted iterations
+default   [  58% ] 091/100 VUs  2m19.9s/4m00.0s
+time="2026-04-26T20:51:44+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:45+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+
+running (2m20.9s), 092/100 VUs, 28809 complete and 0 interrupted iterations
+default   [  59% ] 092/100 VUs  2m20.9s/4m00.0s
+time="2026-04-26T20:51:45+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+
+running (2m21.9s), 093/100 VUs, 28810 complete and 0 interrupted iterations
+default   [  59% ] 093/100 VUs  2m21.9s/4m00.0s
+time="2026-04-26T20:51:46+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:47+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+
+running (2m22.9s), 094/100 VUs, 28812 complete and 0 interrupted iterations
+default   [  60% ] 094/100 VUs  2m22.9s/4m00.0s
+time="2026-04-26T20:51:47+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cmarquee%20onstart%3Dalert%281%29%3E\": request timeout"
+
+running (2m23.9s), 094/100 VUs, 28814 complete and 0 interrupted iterations
+default   [  60% ] 094/100 VUs  2m23.9s/4m00.0s
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cdetails%20open%20ontoggle%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20SLEEP%285%29--\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%3B%20DROP%20TABLE%20users--\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Ca%20href%3D%27javascript%3Aalert%281%29%27%3EXSS%3C%2Fa%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20%271%27%3D%271\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3CSCRIPT%3Ealert%281%29%3C%2FSCRIPT%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3CSCRIPT%3Ealert%281%29%3C%2FSCRIPT%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20SLEEP%285%29--\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%2527%20OR%20%25271%2527%253D%25271\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3CSCRIPT%3Ealert%281%29%3C%2FSCRIPT%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%3B%20DROP%20TABLE%20users--\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:51:48+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=0x27206f7220%200x313d31\": request timeout"
+time="2026-04-26T20:51:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+
+running (2m24.9s), 095/100 VUs, 28885 complete and 0 interrupted iterations
+default   [  60% ] 095/100 VUs  2m24.9s/4m00.0s
+time="2026-04-26T20:51:50+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%20UNION%20SELECT%201%2C2%2C3--\": request timeout"
+time="2026-04-26T20:51:50+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+
+running (2m25.9s), 096/100 VUs, 28898 complete and 0 interrupted iterations
+default   [  61% ] 096/100 VUs  2m25.9s/4m00.0s
+
+running (2m26.9s), 097/100 VUs, 29706 complete and 0 interrupted iterations
+default   [  61% ] 097/100 VUs  2m26.9s/4m00.0s
+
+running (2m27.9s), 098/100 VUs, 30387 complete and 0 interrupted iterations
+default   [  62% ] 098/100 VUs  2m27.9s/4m00.0s
+
+running (2m28.9s), 099/100 VUs, 30998 complete and 0 interrupted iterations
+default   [  62% ] 099/100 VUs  2m28.9s/4m00.0s
+
+running (2m29.9s), 099/100 VUs, 31673 complete and 0 interrupted iterations
+default   [  62% ] 099/100 VUs  2m29.9s/4m00.0s
+
+running (2m30.9s), 100/100 VUs, 32370 complete and 0 interrupted iterations
+default   [  63% ] 100/100 VUs  2m30.9s/4m00.0s
+
+running (2m31.9s), 100/100 VUs, 33149 complete and 0 interrupted iterations
+default   [  63% ] 100/100 VUs  2m31.9s/4m00.0s
+
+running (2m32.9s), 100/100 VUs, 33874 complete and 0 interrupted iterations
+default   [  64% ] 100/100 VUs  2m32.9s/4m00.0s
+
+running (2m33.9s), 100/100 VUs, 34683 complete and 0 interrupted iterations
+default   [  64% ] 100/100 VUs  2m33.9s/4m00.0s
+
+running (2m35.0s), 100/100 VUs, 35525 complete and 0 interrupted iterations
+default   [  65% ] 100/100 VUs  2m35.0s/4m00.0s
+
+running (2m35.9s), 100/100 VUs, 36272 complete and 0 interrupted iterations
+default   [  65% ] 100/100 VUs  2m35.9s/4m00.0s
+
+running (2m36.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  65% ] 100/100 VUs  2m36.9s/4m00.0s
+
+running (2m37.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  66% ] 100/100 VUs  2m37.9s/4m00.0s
+
+running (2m38.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  66% ] 100/100 VUs  2m38.9s/4m00.0s
+
+running (2m39.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  67% ] 100/100 VUs  2m39.9s/4m00.0s
+
+running (2m40.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  67% ] 100/100 VUs  2m40.9s/4m00.0s
+
+running (2m41.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  67% ] 100/100 VUs  2m41.9s/4m00.0s
+
+running (2m42.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  68% ] 100/100 VUs  2m42.9s/4m00.0s
+
+running (2m43.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  68% ] 100/100 VUs  2m43.9s/4m00.0s
+
+running (2m44.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  69% ] 100/100 VUs  2m44.9s/4m00.0s
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%3B%20DROP%20TABLE%20users--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%26%2360%3Bscript%26%2362%3Balert%281%29%26%2360%3B%2Fscript%26%2362%3B\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%201%3D1--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%20UNION%20SELECT%201%2C2%2C3--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+
+running (2m45.9s), 100/100 VUs, 36336 complete and 0 interrupted iterations
+default   [  69% ] 100/100 VUs  2m45.9s/4m00.0s
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%3B%20DROP%20TABLE%20users--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=0x27206f7220%200x313d31\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%3B%20DROP%20TABLE%20users--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cdetails%20open%20ontoggle%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UN%2F%2A%2A%2FION%20SE%2F%2A%2A%2FLECT%201%2C2--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cmarquee%20onstart%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%20UNION%20SELECT%201%2C2%2C3--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%2527%20OR%20%25271%2527%253D%25271\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%3B%20DROP%20TABLE%20users--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20ALL%20SELECT%20NULL%2CNULL--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:10+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+
+running (2m46.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  70% ] 100/100 VUs  2m46.9s/4m00.0s
+
+running (2m47.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  70% ] 100/100 VUs  2m47.9s/4m00.0s
+
+running (2m48.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  70% ] 100/100 VUs  2m48.9s/4m00.0s
+
+running (2m49.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  71% ] 100/100 VUs  2m49.9s/4m00.0s
+
+running (2m50.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  71% ] 100/100 VUs  2m50.9s/4m00.0s
+
+running (2m51.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  72% ] 100/100 VUs  2m51.9s/4m00.0s
+
+running (2m52.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  72% ] 100/100 VUs  2m52.9s/4m00.0s
+
+running (2m53.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  72% ] 100/100 VUs  2m53.9s/4m00.0s
+
+running (2m54.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  73% ] 100/100 VUs  2m54.9s/4m00.0s
+
+running (2m55.9s), 100/100 VUs, 36438 complete and 0 interrupted iterations
+default   [  73% ] 100/100 VUs  2m55.9s/4m00.0s
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%201%3D1--\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Ca%20href%3D%27javascript%3Aalert%281%29%27%3EXSS%3C%2Fa%3E\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%26%2360%3Bscript%26%2362%3Balert%281%29%26%2360%3B%2Fscript%26%2362%3B\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%26%2360%3Bscript%26%2362%3Balert%281%29%26%2360%3B%2Fscript%26%2362%3B\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%20UNION%20SELECT%201%2C2%2C3--\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%20%271%27%3D%271\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Ca%20href%3D%27javascript%3Aalert%281%29%27%3EXSS%3C%2Fa%3E\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20%271%27%3D%271\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Ca%20href%3D%27javascript%3Aalert%281%29%27%3EXSS%3C%2Fa%3E\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cmarquee%20onstart%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3CSCRIPT%3Ealert%281%29%3C%2FSCRIPT%3E\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=admin%27--\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:20+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+
+running (2m56.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  74% ] 100/100 VUs  2m56.9s/4m00.0s
+
+running (2m57.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  74% ] 100/100 VUs  2m57.9s/4m00.0s
+
+running (2m58.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  75% ] 100/100 VUs  2m58.9s/4m00.0s
+
+running (2m59.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  75% ] 100/100 VUs  2m59.9s/4m00.0s
+
+running (3m00.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  75% ] 100/100 VUs  3m00.9s/4m00.0s
+
+running (3m01.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  76% ] 100/100 VUs  3m01.9s/4m00.0s
+
+running (3m02.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  76% ] 100/100 VUs  3m02.9s/4m00.0s
+
+running (3m03.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  77% ] 100/100 VUs  3m03.9s/4m00.0s
+
+running (3m04.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  77% ] 100/100 VUs  3m04.9s/4m00.0s
+
+running (3m05.9s), 100/100 VUs, 36538 complete and 0 interrupted iterations
+default   [  77% ] 100/100 VUs  3m05.9s/4m00.0s
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%26%2360%3Bscript%26%2362%3Balert%281%29%26%2360%3B%2Fscript%26%2362%3B\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3CSCRIPT%3Ealert%281%29%3C%2FSCRIPT%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3CSCRIPT%3Ealert%281%29%3C%2FSCRIPT%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20%271%27%3D%271\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cmarquee%20onstart%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%201%3D1--\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=admin%27--\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3CSCRIPT%3Ealert%281%29%3C%2FSCRIPT%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%20%271%27%3D%271\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=0x27206f7220%200x313d31\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+
+running (3m06.9s), 100/100 VUs, 36645 complete and 0 interrupted iterations
+default   [  78% ] 100/100 VUs  3m06.9s/4m00.0s
+
+running (3m07.9s), 100/100 VUs, 37500 complete and 0 interrupted iterations
+default   [  78% ] 100/100 VUs  3m07.9s/4m00.0s
+
+running (3m08.9s), 100/100 VUs, 38335 complete and 0 interrupted iterations
+default   [  79% ] 100/100 VUs  3m08.9s/4m00.0s
+
+running (3m09.9s), 100/100 VUs, 39187 complete and 0 interrupted iterations
+default   [  79% ] 100/100 VUs  3m09.9s/4m00.0s
+
+running (3m10.9s), 100/100 VUs, 40075 complete and 0 interrupted iterations
+default   [  80% ] 100/100 VUs  3m10.9s/4m00.0s
+
+running (3m11.9s), 100/100 VUs, 40949 complete and 0 interrupted iterations
+default   [  80% ] 100/100 VUs  3m11.9s/4m00.0s
+
+running (3m12.9s), 100/100 VUs, 41826 complete and 0 interrupted iterations
+default   [  80% ] 100/100 VUs  3m12.9s/4m00.0s
+
+running (3m13.9s), 100/100 VUs, 42741 complete and 0 interrupted iterations
+default   [  81% ] 100/100 VUs  3m13.9s/4m00.0s
+
+running (3m14.9s), 100/100 VUs, 43647 complete and 0 interrupted iterations
+default   [  81% ] 100/100 VUs  3m14.9s/4m00.0s
+
+running (3m15.9s), 100/100 VUs, 43649 complete and 0 interrupted iterations
+default   [  82% ] 100/100 VUs  3m15.9s/4m00.0s
+
+running (3m16.9s), 100/100 VUs, 43649 complete and 0 interrupted iterations
+default   [  82% ] 100/100 VUs  3m16.9s/4m00.0s
+
+running (3m17.9s), 100/100 VUs, 43649 complete and 0 interrupted iterations
+default   [  82% ] 100/100 VUs  3m17.9s/4m00.0s
+
+running (3m18.9s), 100/100 VUs, 43649 complete and 0 interrupted iterations
+default   [  83% ] 100/100 VUs  3m18.9s/4m00.0s
+
+running (3m19.9s), 100/100 VUs, 43649 complete and 0 interrupted iterations
+default   [  83% ] 100/100 VUs  3m19.9s/4m00.0s
+
+running (3m20.9s), 100/100 VUs, 43649 complete and 0 interrupted iterations
+default   [  84% ] 100/100 VUs  3m20.9s/4m00.0s
+
+running (3m21.9s), 100/100 VUs, 43649 complete and 0 interrupted iterations
+default   [  84% ] 100/100 VUs  3m21.9s/4m00.0s
+
+running (3m22.9s), 100/100 VUs, 43649 complete and 0 interrupted iterations
+default   [  85% ] 100/100 VUs  3m22.9s/4m00.0s
+
+running (3m23.9s), 100/100 VUs, 43649 complete and 0 interrupted iterations
+default   [  85% ] 100/100 VUs  3m23.9s/4m00.0s
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3CSCRIPT%3Ealert%281%29%3C%2FSCRIPT%3E\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%20UNION%20SELECT%201%2C2%2C3--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20ALL%20SELECT%20NULL%2CNULL--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UN%2F%2A%2A%2FION%20SE%2F%2A%2A%2FLECT%201%2C2--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cmarquee%20onstart%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=admin%27--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20SLEEP%285%29--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%26%2360%3Bscript%26%2362%3Balert%281%29%26%2360%3B%2Fscript%26%2362%3B\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cmarquee%20onstart%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20ALL%20SELECT%20NULL%2CNULL--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=admin%27--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%2527%20OR%20%25271%2527%253D%25271\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=admin%27--\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3CSCRIPT%3Ealert%281%29%3C%2FSCRIPT%3E\": request timeout"
+
+running (3m24.9s), 100/100 VUs, 43670 complete and 0 interrupted iterations
+default   [  85% ] 100/100 VUs  3m24.9s/4m00.0s
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:49+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+
+running (3m26.0s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  86% ] 100/100 VUs  3m26.0s/4m00.0s
+
+running (3m26.9s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  86% ] 100/100 VUs  3m26.9s/4m00.0s
+
+running (3m28.0s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  87% ] 100/100 VUs  3m28.0s/4m00.0s
+
+running (3m28.9s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  87% ] 100/100 VUs  3m28.9s/4m00.0s
+
+running (3m29.9s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  87% ] 100/100 VUs  3m29.9s/4m00.0s
+
+running (3m30.9s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  88% ] 100/100 VUs  3m30.9s/4m00.0s
+
+running (3m31.9s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  88% ] 100/100 VUs  3m31.9s/4m00.0s
+
+running (3m32.9s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  89% ] 100/100 VUs  3m32.9s/4m00.0s
+
+running (3m33.9s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  89% ] 100/100 VUs  3m33.9s/4m00.0s
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%26%2360%3Bscript%26%2362%3Balert%281%29%26%2360%3B%2Fscript%26%2362%3B\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20OR%20%271%27%3D%271\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+
+running (3m34.9s), 100/100 VUs, 43755 complete and 0 interrupted iterations
+default   [  90% ] 100/100 VUs  3m34.9s/4m00.0s
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20%271%27%3D%271\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%3B%20DROP%20TABLE%20users--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cbody%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20ALL%20SELECT%20NULL%2CNULL--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20SLEEP%285%29--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Csvg%20onload%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=1%27%20AND%20SLEEP%285%29--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=order%20by%20price\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cdetails%20open%20ontoggle%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%27%09OR%091%3D1--\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=apple%20banana%20cherry\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=update%20me%20with%20news\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=laptop\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/login\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:52:59+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+
+running (3m35.9s), 083/100 VUs, 43855 complete and 0 interrupted iterations
+default   [  90% ] 083/100 VUs  3m35.9s/4m00.0s
+
+running (3m36.9s), 083/100 VUs, 43855 complete and 0 interrupted iterations
+default   [  90% ] 083/100 VUs  3m36.9s/4m00.0s
+
+running (3m37.9s), 083/100 VUs, 43855 complete and 0 interrupted iterations
+default   [  91% ] 083/100 VUs  3m37.9s/4m00.0s
+
+running (3m38.9s), 083/100 VUs, 43855 complete and 0 interrupted iterations
+default   [  91% ] 083/100 VUs  3m38.9s/4m00.0s
+
+running (3m39.9s), 083/100 VUs, 43855 complete and 0 interrupted iterations
+default   [  92% ] 083/100 VUs  3m39.9s/4m00.0s
+
+running (3m40.9s), 064/100 VUs, 44177 complete and 0 interrupted iterations
+default   [  92% ] 064/100 VUs  3m40.9s/4m00.0s
+
+running (3m41.9s), 061/100 VUs, 44694 complete and 0 interrupted iterations
+default   [  92% ] 061/100 VUs  3m41.9s/4m00.0s
+
+running (3m42.9s), 057/100 VUs, 45191 complete and 0 interrupted iterations
+default   [  93% ] 057/100 VUs  3m42.9s/4m00.0s
+
+running (3m43.9s), 054/100 VUs, 45672 complete and 0 interrupted iterations
+default   [  93% ] 054/100 VUs  3m43.9s/4m00.0s
+
+running (3m44.9s), 051/100 VUs, 46136 complete and 0 interrupted iterations
+default   [  94% ] 051/100 VUs  3m44.9s/4m00.0s
+
+running (3m45.9s), 048/100 VUs, 46537 complete and 0 interrupted iterations
+default   [  94% ] 048/100 VUs  3m45.9s/4m00.0s
+
+running (3m46.9s), 044/100 VUs, 46965 complete and 0 interrupted iterations
+default   [  95% ] 044/100 VUs  3m46.9s/4m00.0s
+
+running (3m47.9s), 041/100 VUs, 47338 complete and 0 interrupted iterations
+default   [  95% ] 041/100 VUs  3m47.9s/4m00.0s
+
+running (3m48.9s), 038/100 VUs, 47693 complete and 0 interrupted iterations
+default   [  95% ] 038/100 VUs  3m48.9s/4m00.0s
+
+running (3m49.9s), 034/100 VUs, 48028 complete and 0 interrupted iterations
+default   [  96% ] 034/100 VUs  3m49.9s/4m00.0s
+
+running (3m50.9s), 031/100 VUs, 48326 complete and 0 interrupted iterations
+default   [  96% ] 031/100 VUs  3m50.9s/4m00.0s
+
+running (3m51.9s), 028/100 VUs, 48592 complete and 0 interrupted iterations
+default   [  97% ] 028/100 VUs  3m51.9s/4m00.0s
+
+running (3m52.9s), 024/100 VUs, 48832 complete and 0 interrupted iterations
+default   [  97% ] 024/100 VUs  3m52.9s/4m00.0s
+
+running (3m53.9s), 021/100 VUs, 49047 complete and 0 interrupted iterations
+default   [  97% ] 021/100 VUs  3m53.9s/4m00.0s
+
+running (3m54.9s), 017/100 VUs, 49228 complete and 0 interrupted iterations
+default   [  98% ] 017/100 VUs  3m54.9s/4m00.0s
+
+running (3m55.9s), 014/100 VUs, 49382 complete and 0 interrupted iterations
+default   [  98% ] 014/100 VUs  3m55.9s/4m00.0s
+
+running (3m56.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default   [  99% ] 012/100 VUs  3m56.9s/4m00.0s
+
+running (3m57.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default   [  99% ] 012/100 VUs  3m57.9s/4m00.0s
+
+running (3m58.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default   [ 100% ] 012/100 VUs  3m58.9s/4m00.0s
+
+running (3m59.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default   [ 100% ] 012/100 VUs  3m59.9s/4m00.0s
+
+running (4m00.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default ↓ [ 100% ] 012/100 VUs  4m0s
+
+running (4m01.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default ↓ [ 100% ] 012/100 VUs  4m0s
+
+running (4m02.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default ↓ [ 100% ] 012/100 VUs  4m0s
+
+running (4m03.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default ↓ [ 100% ] 012/100 VUs  4m0s
+
+running (4m04.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default ↓ [ 100% ] 012/100 VUs  4m0s
+
+running (4m05.9s), 012/100 VUs, 49450 complete and 0 interrupted iterations
+default ↓ [ 100% ] 012/100 VUs  4m0s
+time="2026-04-26T20:53:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=hello%20world\": request timeout"
+time="2026-04-26T20:53:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=where%20is%20the%20gym\": request timeout"
+time="2026-04-26T20:53:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:53:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:53:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/\": request timeout"
+time="2026-04-26T20:53:30+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/login\": request timeout"
+time="2026-04-26T20:53:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=%3Cdetails%20open%20ontoggle%3Dalert%281%29%3E\": request timeout"
+time="2026-04-26T20:53:30+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=admin%27--\": request timeout"
+time="2026-04-26T20:53:31+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+time="2026-04-26T20:53:31+07:00" level=warning msg="Request Failed" error="Post \"https://localhost/search\": request timeout"
+time="2026-04-26T20:53:31+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=select%20your%20product\": request timeout"
+time="2026-04-26T20:53:31+07:00" level=warning msg="Request Failed" error="Get \"https://localhost/search?q=phone\": request timeout"
+
+
+  █ THRESHOLDS 
+
+    clean_req_latency_ms
+    ✓ 'p(95)<600' p(95)=61.24ms
+
+    http_req_duration
+    ✓ 'p(95)<1000' p(95)=53.66ms
+
+    network_error_rate
+    ✓ 'rate<0.02' rate=1.51%
+
+    waf_block_rate
+    ✓ 'rate>0.85' rate=98.35%
+
+    waf_fp_rate
+    ✓ 'rate<0.05' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 75542  306.327225/s
+    checks_succeeded...: 59.11% 44653 out of 75542
+    checks_failed......: 40.88% 30889 out of 75542
+
+    ✗ clean traffic blocked (FP ❌)
+      ↳  0% — ✓ 0 / ✗ 30137
+    ✗ clean traffic passed (200 ✅)
+      ↳  98% — ✓ 29636 / ✗ 501
+    ✗ attack blocked (403)
+      ↳  98% — ✓ 15017 / ✗ 251
+
+    CUSTOM
+    attack_blocked_403.............: 15017  60.894813/s
+    attack_req_latency_ms..........: avg=101.48ms min=0s       med=3.39ms   max=10.03s p(90)=20.27ms  p(95)=34.4ms  
+    clean_passed_200...............: 29636  120.175712/s
+    clean_req_latency_ms...........: avg=124.51ms min=0s       med=9.84ms   max=10s    p(90)=40.62ms  p(95)=61.24ms 
+    network_error_rate.............: 1.51%  750 out of 49462
+    rate_limited_429...............: 4057   16.451372/s
+    waf_block_rate.................: 98.35% 15017 out of 15268
+    waf_fp_rate....................: 0.00%  0 out of 30137
+
+    HTTP
+    http_req_duration..............: avg=116.48ms min=0s       med=7.69ms   max=10.03s p(90)=34.78ms  p(95)=53.66ms 
+      { expected_response:true }...: avg=17.15ms  min=0s       med=7.65ms   max=2.86s  p(90)=32.84ms  p(95)=48.34ms 
+    http_req_failed................: 1.52%  752 out of 49462
+    http_reqs......................: 49462  200.571301/s
+
+    EXECUTION
+    iteration_duration.............: avg=284.82ms min=100.55ms med=108.99ms max=10.13s p(90)=139.69ms p(95)=163.44ms
+    iterations.....................: 49462  200.571301/s
+    vus............................: 12     min=1              max=100
+    vus_max........................: 100    min=100            max=100
+
+    NETWORK
+    data_received..................: 71 MB  288 kB/s
+    data_sent......................: 7.1 MB 29 kB/s
+
+
+
+
+running (4m06.6s), 000/100 VUs, 49462 complete and 0 interrupted iterations
+default ✓ [ 100% ] 000/100 VUs  4m0s

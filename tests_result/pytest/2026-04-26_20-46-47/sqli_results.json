@@ -1,0 +1,298 @@
+{
+  "test": "sqli_results",
+  "timestamp": "2026-04-26_20-46-47",
+  "waf_url": "https://localhost",
+  "count": 29,
+  "results": [
+    {
+      "description": "Classic Tautology",
+      "payload": "' OR '1'='1",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 63.21,
+      "url": "https://localhost/search?q=%27%20OR%20%271%27%3D%271"
+    },
+    {
+      "description": "Tautology + Comment",
+      "payload": "' OR 1=1--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 39.63,
+      "url": "https://localhost/search?q=%27%20OR%201%3D1--"
+    },
+    {
+      "description": "Auth Bypass Comment",
+      "payload": "admin'--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 49.99,
+      "url": "https://localhost/search?q=admin%27--"
+    },
+    {
+      "description": "AND Tautology",
+      "payload": "1' AND '1'='1",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 30.78,
+      "url": "https://localhost/search?q=1%27%20AND%20%271%27%3D%271"
+    },
+    {
+      "description": "UNION SELECT",
+      "payload": "' UNION SELECT 1,2,3--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 34.9,
+      "url": "https://localhost/search?q=%27%20UNION%20SELECT%201%2C2%2C3--"
+    },
+    {
+      "description": "UNION ALL NULL",
+      "payload": "' UNION ALL SELECT NULL,NULL,NULL--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 37.41,
+      "url": "https://localhost/search?q=%27%20UNION%20ALL%20SELECT%20NULL%2CNULL%2CNULL--"
+    },
+    {
+      "description": "UNION Exfil",
+      "payload": "1 UNION SELECT username,password FROM users",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 54.1,
+      "url": "https://localhost/search?q=1%20UNION%20SELECT%20username%2Cpassword%20FROM%20users"
+    },
+    {
+      "description": "Info Schema",
+      "payload": "' UNION SELECT table_name FROM information_schema.tables--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 48.36,
+      "url": "https://localhost/search?q=%27%20UNION%20SELECT%20table_name%20FROM%20information_schema.tables--"
+    },
+    {
+      "description": "Time-based SLEEP",
+      "payload": "1' AND SLEEP(1)--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 68.51,
+      "url": "https://localhost/search?q=1%27%20AND%20SLEEP%281%29--"
+    },
+    {
+      "description": "MSSQL WAITFOR",
+      "payload": "'; WAITFOR DELAY '0:0:1'--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 91.62,
+      "url": "https://localhost/search?q=%27%3B%20WAITFOR%20DELAY%20%270%3A0%3A1%27--"
+    },
+    {
+      "description": "BENCHMARK",
+      "payload": "1' AND BENCHMARK(1000000,MD5(1))--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 84.69,
+      "url": "https://localhost/search?q=1%27%20AND%20BENCHMARK%281000000%2CMD5%281%29%29--"
+    },
+    {
+      "description": "Stacked DROP",
+      "payload": "1; DROP TABLE users--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 46.31,
+      "url": "https://localhost/search?q=1%3B%20DROP%20TABLE%20users--"
+    },
+    {
+      "description": "Stacked INSERT",
+      "payload": "1; INSERT INTO users VALUES('hack','hack')--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 68.99,
+      "url": "https://localhost/search?q=1%3B%20INSERT%20INTO%20users%20VALUES%28%27hack%27%2C%27hack%27%29--"
+    },
+    {
+      "description": "Error EXTRACTVALUE",
+      "payload": "' AND EXTRACTVALUE(1,CONCAT(0x7e,VERSION()))--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 91.45,
+      "url": "https://localhost/search?q=%27%20AND%20EXTRACTVALUE%281%2CCONCAT%280x7e%2CVERSION%28%29%29%29--"
+    },
+    {
+      "description": "MSSQL CONVERT",
+      "payload": "1 AND 1=CONVERT(int,(SELECT TOP 1 name FROM sysobjects))",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 89.53,
+      "url": "https://localhost/search?q=1%20AND%201%3DCONVERT%28int%2C%28SELECT%20TOP%201%20name%20FROM%20sysobjects%29%29"
+    },
+    {
+      "description": "URL Encoded OR",
+      "payload": "' %4F%52 '1'='1",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 103.35,
+      "url": "https://localhost/search?q=%27%20%254F%2552%20%271%27%3D%271"
+    },
+    {
+      "description": "MySQL Comment Bypass",
+      "payload": "' /*!OR*/ '1'='1",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 78.54,
+      "url": "https://localhost/search?q=%27%20/%2A%21OR%2A/%20%271%27%3D%271"
+    },
+    {
+      "description": "Hex Encoding",
+      "payload": "0x27206f7220 0x313d31",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 48.7,
+      "url": "https://localhost/search?q=0x27206f7220%200x313d31"
+    },
+    {
+      "description": "URL Double-Encoded OR",
+      "payload": "%2527%20OR%20%25271%2527%253D%25271",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 39.01,
+      "url": "https://localhost/search?q=%252527%2520OR%2520%2525271%252527%25253D%2525271"
+    },
+    {
+      "description": "Comment Obfuscation",
+      "payload": "' UN/**/ION SE/**/LECT 1,2--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 65.25,
+      "url": "https://localhost/search?q=%27%20UN/%2A%2A/ION%20SE/%2A%2A/LECT%201%2C2--"
+    },
+    {
+      "description": "Tab-Encoded OR",
+      "payload": "'%09OR%091=1--",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 31.75,
+      "url": "https://localhost/search?q=%27%2509OR%25091%3D1--"
+    },
+    {
+      "description": "Normal Text",
+      "payload": "hello world",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 41.56,
+      "url": "https://localhost/search?q=hello%20world"
+    },
+    {
+      "description": "SELECT in English sentence",
+      "payload": "SELECT your product",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 58.63,
+      "url": "https://localhost/search?q=SELECT%20your%20product"
+    },
+    {
+      "description": "Normal Password",
+      "payload": "my password is 123456",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 39.74,
+      "url": "https://localhost/search?q=my%20password%20is%20123456"
+    },
+    {
+      "description": "Normal Search",
+      "payload": "search for items",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 48.99,
+      "url": "https://localhost/search?q=search%20for%20items"
+    },
+    {
+      "description": "Normal Order By",
+      "payload": "order by price",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 39.48,
+      "url": "https://localhost/search?q=order%20by%20price"
+    },
+    {
+      "description": "Normal Keywords",
+      "payload": "apple banana cherry",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 57.05,
+      "url": "https://localhost/search?q=apple%20banana%20cherry"
+    },
+    {
+      "description": "WHERE in English",
+      "payload": "WHERE is the nearest coffee shop",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 44.03,
+      "url": "https://localhost/search?q=WHERE%20is%20the%20nearest%20coffee%20shop"
+    },
+    {
+      "description": "UPDATE in English",
+      "payload": "update me with latest news",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 63.34,
+      "url": "https://localhost/search?q=update%20me%20with%20latest%20news"
+    }
+  ]
+}
