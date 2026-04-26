@@ -1,0 +1,1 @@
+http://localhost:5001/search?q=test (GET)  # C:\Users\MSII\AppData\Local\Programs\Python\Python312\Scripts\sqlmap -u http://localhost:5001/search?q=test --batch --level=5 --risk=3 --technique=BEUST --random-agent --timeout=15 --retries=2 --ignore-code=403,429 --no-cast --output-dir=C:\Users\MSII\cn322waf\tests_result\sqlmap\2026-04-26_20-46-38\03_direct_bypass
