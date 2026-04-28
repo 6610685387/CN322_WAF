@@ -62,20 +62,29 @@ def rate_limit():
     time.sleep(SLEEP_MS)
 
 
-@pytest.fixture(scope="session")
-def result_writer():
+@pytest.fixture
+def result_writer(request):
     """
-    ส่ง dict ผลลัพธ์ไปบันทึกเป็น JSON หลัง session จบ
-    ใช้ใน test: result_writer(test_name, results_list)
+    ส่ง dict ผลลัพธ์ไปบันทึกเป็น JSON หลัง test จบ
+    ใช้ใน test: result_writer(results_list)
+                หรือ      result_writer(test_name, results_list)  ← backward compat
+    ชื่อไฟล์ผลลัพธ์จะตรงกับชื่อ test function โดยอัตโนมัติ
     """
     _store: dict[str, list] = {}
+    _test_name: str = request.node.name  # ชื่อ test function จริงๆ
 
-    def write(test_name: str, results: list):
-        _store[test_name] = results
+    def write(name_or_results, results: list = None):
+        if results is None:
+            # เรียกแบบใหม่: result_writer(results_list)
+            _store[_test_name] = name_or_results
+        else:
+            # เรียกแบบเดิม: result_writer("custom_name", results_list)
+            # ยังใช้ชื่อ test function เป็นชื่อไฟล์ แต่บันทึก custom_name ใน JSON
+            _store[_test_name] = results
 
     yield write
 
-    # หลัง session: บันทึกทุก test ลงไฟล์
+    # หลัง test: บันทึกผลลัพธ์ลงไฟล์ชื่อเดียวกับ test function
     for name, data in _store.items():
         out_file = RUN_DIR / f"{name}.json"
         with open(out_file, "w", encoding="utf-8") as f:
@@ -99,3 +108,71 @@ def pytest_configure(config):
     config.addinivalue_line("markers", "xss: XSS test cases")
     config.addinivalue_line("markers", "false_positive: False positive test cases")
     config.addinivalue_line("markers", "slow: Tests that take longer than usual")
+
+
+# ── Terminal Summary Hook ─────────────────────────────────────────────────────
+
+
+def pytest_terminal_summary(terminalreporter, exitstatus, config):
+    """สรุปผลรวมทั้งหมดแบบ custom ที่ terminal หลัง session จบ"""
+    passed = len(terminalreporter.stats.get("passed", []))
+    failed = len(terminalreporter.stats.get("failed", []))
+    error = len(terminalreporter.stats.get("error", []))
+    skipped = len(terminalreporter.stats.get("skipped", []))
+    total = passed + failed + error + skipped
+
+    pct_pass = (passed / total * 100) if total > 0 else 0.0
+    pct_fail = ((failed + error) / total * 100) if total > 0 else 0.0
+
+    # สี ANSI
+    GREEN = "\033[92m"
+    RED = "\033[91m"
+    YELLOW = "\033[93m"
+    CYAN = "\033[96m"
+    BOLD = "\033[1m"
+    RESET = "\033[0m"
+
+    bar_width = 40
+    fill = int(bar_width * pct_pass / 100) if total > 0 else 0
+    bar = f"{GREEN}{'█' * fill}{RED}{'░' * (bar_width - fill)}{RESET}"
+
+    STATUS_ICON = (
+        f"{GREEN}✅ ALL PASSED{RESET}"
+        if failed == 0 and error == 0
+        else f"{RED}❌ SOME FAILED{RESET}"
+    )
+
+    terminalreporter.write_sep("=", "WAF TEST SUITE — FINAL SUMMARY", bold=True)
+    terminalreporter.write_line("")
+    terminalreporter.write_line(f"  {BOLD}Target WAF :{RESET}  {WAF_BASE}")
+    terminalreporter.write_line(f"  {BOLD}Timestamp  :{RESET}  {RUN_TIMESTAMP}")
+    terminalreporter.write_line("")
+    terminalreporter.write_line(f"  {BOLD}Total Tests:{RESET}  {total}")
+    terminalreporter.write_line(
+        f"  {GREEN}{BOLD}  ✔ Passed  :{RESET}  {passed}  ({pct_pass:.1f}%)"
+    )
+    if failed:
+        terminalreporter.write_line(
+            f"  {RED}{BOLD}  ✖ Failed  :{RESET}  {failed}  ({pct_fail:.1f}%)"
+        )
+    if error:
+        terminalreporter.write_line(f"  {RED}{BOLD}  ✖ Errors  :{RESET}  {error}")
+    if skipped:
+        terminalreporter.write_line(f"  {YELLOW}{BOLD}  ⏭ Skipped :{RESET}  {skipped}")
+    terminalreporter.write_line("")
+    terminalreporter.write_line(f"  Progress:  [{bar}]  {pct_pass:.1f}%")
+    terminalreporter.write_line("")
+    terminalreporter.write_line(f"  Status:    {STATUS_ICON}")
+    terminalreporter.write_line("")
+
+    # แสดงรายชื่อ tests ที่ fail (ถ้ามี)
+    failed_items = terminalreporter.stats.get("failed", [])
+    error_items = terminalreporter.stats.get("error", [])
+    if failed_items or error_items:
+        terminalreporter.write_line(f"  {RED}{BOLD}Failed / Error Tests:{RESET}")
+        for item in failed_items + error_items:
+            node = getattr(item, "nodeid", str(item))
+            terminalreporter.write_line(f"    {RED}✖{RESET} {node}")
+        terminalreporter.write_line("")
+
+    terminalreporter.write_sep("=", "", bold=True)

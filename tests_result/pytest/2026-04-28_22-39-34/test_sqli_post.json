@@ -1,0 +1,53 @@
+{
+  "test": "test_sqli_post",
+  "timestamp": "2026-04-28_22-39-34",
+  "waf_url": "https://localhost",
+  "count": 5,
+  "results": [
+    {
+      "description": "POST Login SQLi Tautology",
+      "data": "{'username': \"' OR '1'='1\", 'password': 'x'}",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 30.52
+    },
+    {
+      "description": "POST Login Auth Bypass",
+      "data": "{'username': \"admin'--\", 'password': 'x'}",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 32.54
+    },
+    {
+      "description": "POST Login UNION",
+      "data": "{'username': \"' UNION SELECT 1,2--\", 'password': 'x'}",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 21.23
+    },
+    {
+      "description": "POST Search UNION Exfil",
+      "data": "{'q': '1 UNION SELECT username,password FROM users--'}",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 28.25
+    },
+    {
+      "description": "POST Login Normal",
+      "data": "{'username': 'alice', 'password': 'mypassword'}",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 405,
+      "latency_ms": 45.53
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "test": "test_false_positive",
+  "timestamp": "2026-04-28_22-39-34",
+  "waf_url": "https://localhost",
+  "count": 44,
+  "results": [
+    {
+      "description": "ถามทิศทาง - WHERE",
+      "input": "WHERE is the gym?",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 68.39
+    },
+    {
+      "description": "คำขอ - SELECT",
+      "input": "Can I SELECT this item please",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 47.64
+    },
+    {
+      "description": "อัพเดต - UPDATE",
+      "input": "UPDATE me on the latest news",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 50.44
+    },
+    {
+      "description": "ลบบัญชี - DELETE",
+      "input": "DELETE this account for me",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 46.91
+    },
+    {
+      "description": "เรียงลำดับ - ORDER BY",
+      "input": "ORDER BY name or price",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 55.17
+    },
+    {
+      "description": "แทรก - INSERT",
+      "input": "INSERT a new product into the list",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 65.41
+    },
+    {
+      "description": "ส่งข้อความ - DROP",
+      "input": "DROP me a message anytime",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 52.63
+    },
+    {
+      "description": "คำถาม - OR",
+      "input": "OR is it available in red?",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 66.61
+    },
+    {
+      "description": "เพิ่มเติม - AND",
+      "input": "AND I want the blue one too",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 95.98
+    },
+    {
+      "description": "จาก collection - FROM",
+      "input": "FROM the collection select one",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 51.14
+    },
+    {
+      "description": "การทักทาย - HAVING",
+      "input": "HAVING a great day today",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 67.98
+    },
+    {
+      "description": "การประชุม - UNION",
+      "input": "UNION members meeting at 9am",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 56.91
+    },
+    {
+      "description": "จัดกลุ่ม - GROUP BY",
+      "input": "GROUP BY interest or department",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 45.07
+    },
+    {
+      "description": "สมาชิก - JOIN",
+      "input": "I want to JOIN the club",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 60.95
+    },
+    {
+      "description": "SELECT * FROM ในเอกสาร tech",
+      "input": "SELECT * FROM documentation",
+      "endpoint": "/search?q={}",
+      "outcome": "FP",
+      "http_status": 403,
+      "blocked": true,
+      "latency_ms": 61.4
+    },
+    {
+      "description": "SQL tutorial keyword",
+      "input": "SQL SELECT FROM WHERE tutorial",
+      "endpoint": "/search?q={}",
+      "outcome": "FP",
+      "http_status": 403,
+      "blocked": true,
+      "latency_ms": 54.1
+    },
+    {
+      "description": "SQL tutorial คำถาม",
+      "input": "how to use SELECT FROM in SQL",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 47.21
+    },
+    {
+      "description": "ภาษาไทย - อัปเดต",
+      "input": "ฉันอยากให้อัปเดตข้อมูลด้วย",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 60.55
+    },
+    {
+      "description": "ภาษาไทย - ลบ",
+      "input": "ลบออเดอร์เก่าออกให้หน่อย",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 59.54
+    },
+    {
+      "description": "ภาษาไทย - เลือก",
+      "input": "เลือกสินค้าที่ดีที่สุดให้หน่อย",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 54.9
+    },
+    {
+      "description": "เปรียบเทียบตัวเลข",
+      "input": "score > 90 and < 100",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 56.43
+    },
+    {
+      "description": "หัวใจ <3",
+      "input": "I love you <3 so much",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 48.55
+    },
+    {
+      "description": "สัญลักษณ์ arrow",
+      "input": "file.txt <-> database sync",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 49.44
+    },
+    {
+      "description": "อัตราส่วน",
+      "input": "ratio 1:2 or 3:4",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 54.22
+    },
+    {
+      "description": "สูตรคณิตศาสตร์",
+      "input": "2+2=4 and 3*3=9",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 70.25
+    },
+    {
+      "description": "URL ธรรมดา",
+      "input": "Visit us at http://localhost:80/",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 54.53
+    },
+    {
+      "description": "CSS hex color #FF5733",
+      "input": "CSS color #FF5733 for the button",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 46.95
+    },
+    {
+      "description": "CSS hex #1a2b3c",
+      "input": "background: #1a2b3c in dark mode",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 49.87
+    },
+    {
+      "description": "ชื่อ username ปกติ",
+      "input": "alice",
+      "endpoint": "/login?username={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 48.14
+    },
+    {
+      "description": "Username underscore",
+      "input": "user_name_123",
+      "endpoint": "/login?username={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 61.63
+    },
+    {
+      "description": "Email format",
+      "input": "first.last@email.com",
+      "endpoint": "/login?username={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 51.95
+    },
+    {
+      "description": "ข้อความรหัสผ่าน",
+      "input": "my password is secure",
+      "endpoint": "/login?username={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 46.67
+    },
+    {
+      "description": "C++ in search",
+      "input": "C++ programming language",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 71.38
+    },
+    {
+      "description": "ราคาสินค้า",
+      "input": "price: $100 or less",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 51.48
+    },
+    {
+      "description": "เปอร์เซ็นต์",
+      "input": "50% off sale",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 44.52
+    },
+    {
+      "description": "& ในชื่อเพลง",
+      "input": "rock & roll music",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 50.6
+    },
+    {
+      "description": "apostrophe ปกติ",
+      "input": "Tom's favorite book",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 46.37
+    },
+    {
+      "description": "double quote ปกติ",
+      "input": "He said \"Hello World\"",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 62.29
+    },
+    {
+      "description": "script ในบริบท writing",
+      "input": "script writing tips",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 49.25
+    },
+    {
+      "description": "shell script tutorial",
+      "input": "shell script tutorial",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 47.37
+    },
+    {
+      "description": "CSS selector",
+      "input": "CSS selector tutorial",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 70.65
+    },
+    {
+      "description": "excel select all",
+      "input": "how to select all in excel",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 47.08
+    },
+    {
+      "description": "function() ใน Python context",
+      "input": "Python function() basics",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 45.55
+    },
+    {
+      "description": "benchmark ≠ BENCHMARK()",
+      "input": "benchmark results for API",
+      "endpoint": "/search?q={}",
+      "outcome": "TN",
+      "http_status": 200,
+      "blocked": false,
+      "latency_ms": 52.54
+    }
+  ]
+}

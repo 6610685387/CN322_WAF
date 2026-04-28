@@ -1,0 +1,260 @@
+{
+  "test": "test_xss_detection",
+  "timestamp": "2026-04-28_22-39-34",
+  "waf_url": "https://localhost",
+  "count": 28,
+  "results": [
+    {
+      "description": "Classic Script Alert",
+      "payload": "<script>alert(1)</script>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 77.17
+    },
+    {
+      "description": "Script Alert String",
+      "payload": "<script>alert('XSS')</script>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 54.94
+    },
+    {
+      "description": "Script Uppercase",
+      "payload": "<SCRIPT>alert(1)</SCRIPT>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 41.59
+    },
+    {
+      "description": "Nested Script Tag",
+      "payload": "<scr<script>ipt>alert(1)</scr</script>ipt>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 54.8
+    },
+    {
+      "description": "onerror Event",
+      "payload": "<img src=x onerror=alert(1)>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 40.26
+    },
+    {
+      "description": "onload Body",
+      "payload": "<body onload=alert(1)>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 41.42
+    },
+    {
+      "description": "SVG onload",
+      "payload": "<svg onload=alert(1)>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 67.18
+    },
+    {
+      "description": "onfocus autofocus",
+      "payload": "<input onfocus=alert(1) autofocus>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 58.11
+    },
+    {
+      "description": "onclick Anchor",
+      "payload": "<a onclick=alert(1)>click</a>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 42.35
+    },
+    {
+      "description": "ontoggle details",
+      "payload": "<details open ontoggle=alert(1)>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 38.84
+    },
+    {
+      "description": "onstart marquee",
+      "payload": "<marquee onstart=alert(1)>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 53.65
+    },
+    {
+      "description": "onplay video",
+      "payload": "<video autoplay onplay=alert(1)>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 50.79
+    },
+    {
+      "description": "JS URI href",
+      "payload": "<a href='javascript:alert(1)'>XSS</a>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 64.89
+    },
+    {
+      "description": "JS URI iframe",
+      "payload": "<iframe src='javascript:alert(1)'></iframe>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 40.81
+    },
+    {
+      "description": "document.write",
+      "payload": "<div id='x'></div><script>document.write('XSS')</script>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 42.49
+    },
+    {
+      "description": "eval + atob",
+      "payload": "'><script>eval(atob('YWxlcnQoMSk='))</script>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 41.94
+    },
+    {
+      "description": "URL Encoded Script",
+      "payload": "%3Cscript%3Ealert(1)%3C/script%3E",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 43.71
+    },
+    {
+      "description": "HTML Entity Script",
+      "payload": "&#60;script&#62;alert(1)&#60;/script&#62;",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 43.55
+    },
+    {
+      "description": "Null Byte Bypass",
+      "payload": "<scr\u0000ipt>alert(1)</scr\u0000ipt>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 42.75
+    },
+    {
+      "description": "Hex HTML Entity Script",
+      "payload": "&#x3c;script&#x3e;alert(1)&#x3c;/script&#x3e;",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 53.35
+    },
+    {
+      "description": "Data URI HTML",
+      "payload": "<iframe src='data:text/html,<script>alert(1)</script>'>",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 62.89
+    },
+    {
+      "description": "Template Literal XSS",
+      "payload": "`<img src=x onerror=alert\\`1\\`>`",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 45.32
+    },
+    {
+      "description": "Normal Text",
+      "payload": "hello world",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 101.2
+    },
+    {
+      "description": "Simple HTML Bold",
+      "payload": "search query with <b>bold</b>",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 58.92
+    },
+    {
+      "description": "Normal CTA",
+      "payload": "click here for more",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 56.01
+    },
+    {
+      "description": "Angle Brackets Name",
+      "payload": "My name is <n> and I am a user",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 44.69
+    },
+    {
+      "description": "Math Comparison",
+      "payload": "score > 90 and rank < 10",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 65.64
+    },
+    {
+      "description": "Heart Symbol",
+      "payload": "<3 I love you",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 200,
+      "latency_ms": 91.76
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "test": "test_xss_post",
+  "timestamp": "2026-04-28_22-39-34",
+  "waf_url": "https://localhost",
+  "count": 4,
+  "results": [
+    {
+      "description": "POST Login XSS Script",
+      "data": "{'username': '<script>alert(1)</script>', 'password': 'x'}",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 42.88
+    },
+    {
+      "description": "POST Login XSS onerror",
+      "data": "{'username': '<img src=x onerror=alert(1)>', 'password': 'x'}",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 40.04
+    },
+    {
+      "description": "POST Search XSS SVG",
+      "data": "{'q': '<svg onload=alert(1)>'}",
+      "expected_blocked": true,
+      "actually_blocked": true,
+      "outcome": "TP",
+      "http_status": 403,
+      "latency_ms": 42.31
+    },
+    {
+      "description": "POST Login Normal",
+      "data": "{'username': 'alice', 'password': 'x'}",
+      "expected_blocked": false,
+      "actually_blocked": false,
+      "outcome": "TN",
+      "http_status": 405,
+      "latency_ms": 98.37
+    }
+  ]
+}
