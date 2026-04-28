@@ -110,50 +110,29 @@ def collect_inputs(path, request):
 @app.route("/", defaults={"path": ""}, methods=["GET", "POST"])
 @app.route("/<path:path>", methods=["GET", "POST"])
 def waf(path):
-    if DEBUG:
-        print(f"--- New Request to: /{path} ---")
+    # ดึง IP จาก Header ที่ Nginx ส่งมา (X-Forwarded-For)
+    # ถ้าไม่มี ให้ใช้ remote_addr เป็นค่าสำรอง
+    client_ip = request.headers.get("X-Forwarded-For")
+    if client_ip:
+        # ดึง IP ตัวแรกสุด (ในกรณีที่มีการส่งต่อมาหลายทอด)
+        client_ip = client_ip.split(",")[0].strip()
+    else:
+        client_ip = request.remote_addr
 
-    client_ip = request.headers.get("X-Forwarded-For", request.remote_addr)
+    # --- [DEBUG] เพิ่มบรรทัดนี้เพื่อเช็กใน Console ตอนรัน ---
+    print(f"DEBUG: Request from IP: {client_ip}")
 
     if is_ip_banned(client_ip):
-        if DEBUG:
-            print(f"🚫 BLOCKED (BANNED IP): {client_ip}")
         return f"🚫 Your IP ({client_ip}) is banned.", 403
-
-    ip_address = request.remote_addr
-    if DEBUG:
-        print(f"Client IP: {ip_address}")
 
     user_inputs = collect_inputs(path, request)
 
-    # Security scan
     for param_name, data in user_inputs:
-        if not data:
-            continue
-
-  
-        if len(data) > 500:
-            data = data[:500]
-
-    
-        if len(data) < 3:
-            continue
-
-        # *** ลบ isalnum() ออก: Base64 payload ดูเหมือน alnum แต่ซ่อน attack ได้ ***
-        # ข้ามเฉพาะตัวเลขล้วน (เช่น user ID) ซึ่งไม่มีทางเป็น injection
-        if data.isdigit():
-            continue
-
         result = scan_payload(data)
-
         if result["is_blocked"]:
-            if DEBUG:
-                print(f"🚨 BLOCKED: {result['attack_type']} in '{param_name}'")
-                print(f"📈 Score: {result['total_score']} | Payload: {data}")
-                print(f"🧹 Cleaned: {result['cleaned_payload']}")
-
+            # มั่นใจว่าใช้ client_ip ที่เราดึงมาข้างบนบันทึก
             add_log(
-                ip_address=ip_address,
+                ip_address=client_ip, 
                 attack_type=result["attack_type"],
                 payload=data,
                 score=result["total_score"],
@@ -161,10 +140,7 @@ def waf(path):
             )
 
             safe_data = html.escape(data)
-            return (
-                f"🚫 Blocked by WAF: {result['attack_type']} detected in '{safe_data}'",
-                403,
-            )
+            return f"🚫 Blocked by WAF: {result['attack_type']} detected", 403
 
     # Clean → Forward
     if DEBUG:
