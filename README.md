@@ -157,13 +157,73 @@ CN322_WAF/
 
 ---
 
-## การรัน Security Tests
+## การรัน Tests
 
-```bash
+```
+cd <project-folder>
+```
+รัน GoTestWAF (ทดสอบทั้งหมด):
+เปิด PowerShell
+```
+docker run --rm '
+  --network host '
+  -v <host-path>/tests_result/gotest/all:/app/reports '
+  wallarm/gotestwaf '
+  --url=https://localhost/ '
+  --tlsVerify=false '
+  --noEmailReport '
+  --reportFormat=html '
+  --wafName="MyWAF" '
+  --sendDelay=200
+```
+รันเฉพาะ SQL Injection:
+```
+docker run --rm '
+  --network host '
+  -v <host-path>/tests_result/gotest/sql:/app/reports '
+  wallarm/gotestwaf '
+  --url=https://localhost/ '
+  --tlsVerify=false '
+  --noEmailReport '
+  --reportFormat=html '
+  --testSet=owasp '
+  --testCase=sql-injection
+```
+รันเฉพาะ XSS:
+```
+docker run --rm '
+  --network host '
+  -v <host-path>/tests_result/gotest/xss:/app/reports '
+  wallarm/gotestwaf '
+  --url=https://localhost/ '
+  --tlsVerify=false '
+  --noEmailReport '
+  --reportFormat=html '
+  --testSet=owasp '
+  --testCase=xss-scripting
+```
+รัน Performance Test ด้วย k6:
+
+# baseline
+```
+k6 run tests/performance/k6/baseline.js
+```
+# stress
+```
+k6 run -e WAF_URL=https://localhost/ tests/performance/k6/stress.js
+```
+รัน SQLMap:
+```
+sqlmap -c tests/security/sqlmap/sqlmap.conf
+```
+รัน Pytest:
+
 # รันทุก test
+```
 pytest tests/security/pytest/ -v
-
-# รัน test เฉพาะหมวด
+```
+# รันแยก
+```
 pytest tests/security/pytest/test_1_sqli.py -v
 pytest tests/security/pytest/test_2_xss.py -v
 pytest tests/security/pytest/test_3_false_positive.py -v
