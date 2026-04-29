@@ -162,7 +162,7 @@ CN322_WAF/
 ```
 cd <project-folder>
 ```
-#GoTestWAF:
+# GoTestWAF:
 เปิด PowerShell
 
 รัน Overall Test
@@ -204,7 +204,7 @@ docker run --rm '
   --testSet=owasp '
   --testCase=xss-scripting
 ```
-#รัน Performance Test ด้วย k6:
+# รัน Performance Test ด้วย k6:
 
 baseline
 ```
@@ -214,11 +214,11 @@ stress
 ```
 k6 run -e WAF_URL=https://localhost/ tests/performance/k6/stress.js
 ```
-#รัน SQLMap:
+# รัน SQLMap:
 ```
 sqlmap -c tests/security/sqlmap/sqlmap.conf
 ```
-#รัน Pytest:
+# รัน Pytest:
 
 รันทุก test
 ```
