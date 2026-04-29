@@ -75,7 +75,7 @@ def waf(path):
     if DEBUG:
         print(f"--- New Request to: /{path} ---")
 
-    # [1] ดึง IP ตัวจริง (จากที่เพื่อนแก้)
+    
     client_ip = request.headers.get("X-Forwarded-For")
     if client_ip:
         client_ip = client_ip.split(",")[0].strip()
@@ -96,7 +96,6 @@ def waf(path):
         if not data:
             continue
 
-        # [2] ระบบป้องกันข้อมูลขยะ (จาก Main)
         if len(data) > 500:
             data = data[:500]
         if len(data) < 3:
@@ -112,7 +111,7 @@ def waf(path):
                 print(f"📈 Score: {result['total_score']} | Payload: {data}")
                 print(f"🧹 Cleaned: {result['cleaned_payload']}")
 
-            # [3] ใช้ client_ip บันทึกลงฐานข้อมูล (แก้บั๊ก Main)
+            
             add_log(
                 ip_address=client_ip,
                 attack_type=result["attack_type"],

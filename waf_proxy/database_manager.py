@@ -52,10 +52,6 @@ class BannedIP(Base):
     ban_timestamp = Column(DateTime, default=datetime.utcnow)
 
 
-# ============================================================
-# ✅ IP Ban Cache — ป้องกัน query DB ทุก request
-# ============================================================
-
 _ban_cache: set[str] = set()
 _cache_loaded = False
 
@@ -83,9 +79,7 @@ def is_ip_banned(ip_address: str) -> bool:
     return ip_address in _ban_cache
 
 
-# ============================================================
-# Async Log Queue — ไม่ block request path
-# ============================================================
+
 
 _log_queue: queue.Queue = queue.Queue(maxsize=1000)
 
@@ -95,10 +89,10 @@ def _log_worker():
     while True:
         batch = []
         try:
-            # รอ item แรก (blocking)
+            
             item = _log_queue.get(timeout=2)
             batch.append(item)
-            # ดึงที่เหลือใน queue ออกมา batch เดียว (non-blocking)
+            
             while not _log_queue.empty() and len(batch) < 50:
                 batch.append(_log_queue.get_nowait())
         except queue.Empty:
@@ -115,14 +109,10 @@ def _log_worker():
             db.close()
 
 
-# Start background worker thread
+
 _worker_thread = Thread(target=_log_worker, daemon=True)
 _worker_thread.start()
 
-
-# ============================================================
-# Public API
-# ============================================================
 
 
 def init_db():
@@ -188,7 +178,7 @@ def ban_ip(ip_address: str, reason: str = None):
         db.add(ban_entry)
         db.commit()
         db.refresh(ban_entry)
-        _ban_cache.add(ip_address)  # อัปเดต cache ทันที
+        _ban_cache.add(ip_address)  
         return ban_entry
     except Exception as e:
         db.rollback()
@@ -205,7 +195,7 @@ def unban_ip(ip_address: str):
         if ban_entry:
             db.delete(ban_entry)
             db.commit()
-            _ban_cache.discard(ip_address)  # อัปเดต cache ทันที
+            _ban_cache.discard(ip_address) 
             print(f"Unbanned {ip_address}")
             return True
         return False

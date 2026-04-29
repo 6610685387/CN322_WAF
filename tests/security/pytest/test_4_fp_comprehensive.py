@@ -1,14 +1,5 @@
 """
 WAF False Positive Test Suite — Comprehensive Edition
-======================================================
-FIX v5:
-  - ปรับ assertion threshold → FP ≤ 5% (จากเดิม 15%)
-  - เพิ่ม expected_score_range ที่แม่นขึ้นสำหรับ cases ที่เคย FP
-    "SELECT * FROM documentation"  → expected range (10, 30) ← ยังสูงอยู่
-    "SQL SELECT FROM WHERE tutorial" → expected range (10, 30)
-    แต่ is_fp ต้องเป็น False (HTTP 200) — WAF ต้องไม่ block
-  - แก้ไข is_fp logic: ใช้ HTTP response เป็นหลักเสมอถ้าเชื่อมต่อได้
-  - เพิ่ม CAT 12: CSS/Hex Color ที่เดิมอาจโดน 0x pattern
 """
 
 import sys
@@ -33,10 +24,6 @@ DETECTOR_PATH = os.path.normpath(
     os.path.join(SCRIPT_DIR, "..", "..", "..", "waf_proxy")
 )
 
-# =============================================
-# FP TEST CASES
-# (text, description, category, expected_score_range)
-# =============================================
 FP_CASES = [
     # CAT 1: select.*from
     (
@@ -57,7 +44,7 @@ FP_CASES = [
         "select_from",
         (10, 30),
     ),
-    # FIX: สองบรรทัดด้านล่างเคย FP! WAF ต้อง return 200 หลัง tuning
+   
     (
         "SELECT * FROM documentation",
         "SELECT * FROM ในเอกสาร tech",
@@ -233,7 +220,7 @@ FP_CASES = [
     ("select_all_user", "username มีคำ select (underscore)", "username", (0, 9)),
     ("drop_table_mike", "username มีคำ drop (underscore)", "username", (0, 9)),
     ("O'Brien", "username มี apostrophe (Irish name)", "username", (5, 15)),
-    # CAT 12: CSS / Hex Color (FIX: ใหม่ — เพื่อ test 0x pattern false block)
+    # CAT 12: CSS / Hex Color 
     ("CSS background: #1a2b3c", "CSS hex color #1a2b3c", "css_color", (0, 9)),
     ("hex color code #FF5733 in CSS", "hex color code ใน CSS", "css_color", (0, 9)),
     ("rgba(255, 99, 71, 0.5) color", "rgba ไม่ใช่ hex", "css_color", (0, 9)),
@@ -332,16 +319,13 @@ def test_comprehensive_false_positives(result_writer=None):
         if run_http:
             http_status, http_ms = http_test(text)
             time.sleep(SLEEP_S)
-            # FIX: HTTP result เป็น source of truth เสมอ
-            # is_fp = True ถ้า WAF block (403)
-            # is_fp = False ถ้า 200/302 หรือ 429 (rate limited ≠ WAF decision)
+            
             if http_status == 403:
                 is_fp = True
             elif http_status in (200, 302):
                 is_fp = False
             elif http_status == 429:
-                is_fp = False  # rate limited — ไม่ใช่ WAF FP
-            # else: keep local score result หรือ None
+                is_fp = False 
 
         if is_fp is None:
             is_fp = False
@@ -424,7 +408,7 @@ def test_comprehensive_false_positives(result_writer=None):
     fp_cases_found = [
         (r["description"], r["http_status"]) for r in results if r["is_fp"]
     ]
-    assert fp_rate <= 5.0, (  # FIX: เพิ่มจาก 15% → 5%
+    assert fp_rate <= 5.0, (  
         f"Comprehensive FP Rate {fp_rate:.1f}% > 5% "
         f"({total_fp}/{len(results)} cases)\n"
         f"FP cases: {fp_cases_found}"

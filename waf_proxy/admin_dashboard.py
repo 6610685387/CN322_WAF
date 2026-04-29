@@ -8,9 +8,9 @@ from database_manager import (
     get_attack_stats,
     get_banned_ips,
     get_all_logs,
-)  # Import get_all_logs
+) 
 import os
-from datetime import datetime, timedelta  # Import timedelta
+from datetime import datetime, timedelta 
 
 app = Flask(__name__)
 
@@ -29,7 +29,7 @@ def admin_dashboard():
 @app.route("/admin/logs")
 def admin_logs():
     """Renders the logs page."""
-    # The actual logs will be fetched via API (/api/logs) by the client-side JS
+    
     return render_template("logs.html")
 
 
@@ -38,8 +38,6 @@ def api_stats():
     """API endpoint to fetch statistics for the dashboard charts."""
     try:
         stats = get_attack_stats()
-        # Ensure dates are serializable if they exist in stats
-        # The current implementation returns counts, which are serializable.
         return jsonify(stats)
     except Exception as e:
         print(f"Error in /api/stats: {e}")
@@ -63,9 +61,8 @@ def api_banned_ips():
     try:
         banned_ips_data = (
             get_banned_ips()
-        )  # ต้อง return list ของ dicts: [{"ip_address": ..., "reason": ..., "ban_timestamp": ...}, ...]
+        )  
 
-        # แปลง datetime เป็น string ถ้าจำเป็น
         for entry in banned_ips_data:
             if isinstance(entry.get("ban_timestamp"), datetime):
                 entry["ban_timestamp"] = entry["ban_timestamp"].isoformat()
@@ -81,7 +78,7 @@ def manage_ip():
     """Handles IP banning and unbanning requests."""
     data = request.get_json()
     ip_address = data.get("ip_address")
-    action = data.get("action")  # 'ban' or 'unban'
+    action = data.get("action")  
     reason = data.get("reason")
 
     if not ip_address or not action:

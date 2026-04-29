@@ -1,12 +1,5 @@
 """
 WAF Security Evaluation - XSS Detection Test
-=============================================
-FIX v2:
-  - เพิ่ม HTML entity encoded XSS (&#60;script&#62;) — เดิมเป็น TN ไม่ควรผ่าน!
-  - เพิ่ม CSS expression, meta refresh, template literal
-  - เพิ่ม POST body XSS test
-  - ปรับ assertion threshold → 85%
-  - แยก benign HTML (<b>, <3) ออกเป็น expected TN ชัดเจน
 """
 
 import requests
@@ -34,9 +27,9 @@ XSS_PAYLOADS = [
     ("<svg onload=alert(1)>", True, "SVG onload"),
     ("<input onfocus=alert(1) autofocus>", True, "onfocus autofocus"),
     ("<a onclick=alert(1)>click</a>", True, "onclick Anchor"),
-    ("<details open ontoggle=alert(1)>", True, "ontoggle details"),  # FIX: ใหม่
-    ("<marquee onstart=alert(1)>", True, "onstart marquee"),  # FIX: ใหม่
-    ("<video autoplay onplay=alert(1)>", True, "onplay video"),  # FIX: ใหม่
+    ("<details open ontoggle=alert(1)>", True, "ontoggle details"),  
+    ("<marquee onstart=alert(1)>", True, "onstart marquee"), 
+    ("<video autoplay onplay=alert(1)>", True, "onplay video"),  
     # ── JavaScript URI ───────────────────────────────────────────────────────
     ("<a href='javascript:alert(1)'>XSS</a>", True, "JS URI href"),
     ("<iframe src='javascript:alert(1)'></iframe>", True, "JS URI iframe"),
@@ -49,20 +42,18 @@ XSS_PAYLOADS = [
     ("'><script>eval(atob('YWxlcnQoMSk='))</script>", True, "eval + atob"),
     # ── Encoding Bypass ──────────────────────────────────────────────────────
     ("%3Cscript%3Ealert(1)%3C/script%3E", True, "URL Encoded Script"),
-    # FIX: HTML entity encoding — เดิมเป็น expected=True แต่ยังหลุด!
-    # nginx pre-screen เดิมไม่มี &#60; pattern → ต้องเพิ่มแล้ว retest
-    ("&#60;script&#62;alert(1)&#60;/script&#62;", True, "HTML Entity Script"),  # FIX
+    ("&#60;script&#62;alert(1)&#60;/script&#62;", True, "HTML Entity Script"), 
     ("<scr\x00ipt>alert(1)</scr\x00ipt>", True, "Null Byte Bypass"),
     (
         "&#x3c;script&#x3e;alert(1)&#x3c;/script&#x3e;",
         True,
         "Hex HTML Entity Script",
-    ),  # FIX: ใหม่
+    ),  
     # ── Data URI ─────────────────────────────────────────────────────────────
     ("<iframe src='data:text/html,<script>alert(1)</script>'>", True, "Data URI HTML"),
     # ── Template Literal / Modern JS ────────────────────────────────────────
-    ("`<img src=x onerror=alert\`1\`>`", True, "Template Literal XSS"),  # FIX: ใหม่
-    # ── ควรผ่าน (Benign) — TN ────────────────────────────────────────────────
+    ("`<img src=x onerror=alert\`1\`>`", True, "Template Literal XSS"),  
+
     ("hello world", False, "Normal Text"),
     ("search query with <b>bold</b>", False, "Simple HTML Bold"),
     ("click here for more", False, "Normal CTA"),
@@ -73,7 +64,6 @@ XSS_PAYLOADS = [
 
 ENDPOINT = f"{WAF_BASE}/search?q={{payload}}"
 
-# POST XSS cases
 POST_XSS_CASES = [
     (
         f"{WAF_BASE}/login",
@@ -279,7 +269,7 @@ def _assert(tp, fn, tn, fp, err, label):
     fp_rate = (fp / total_ben * 100) if total_ben > 0 else 0
 
     assert err == 0, f"[{label}] Connection errors: {err} — WAF ไม่พร้อมใช้งาน"
-    assert det_rate >= 85.0, (  # FIX: เพิ่มจาก 80% → 85%
+    assert det_rate >= 85.0, (  
         f"[{label}] XSS Detection Rate {det_rate:.1f}% < 85% "
         f"(TP={tp}, FN={fn}) — WAF พลาด XSS attack เยอะเกินไป"
     )

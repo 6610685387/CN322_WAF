@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAF Attack Logs</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             padding-top: 56px;
         }
 
-        /* Adjust for fixed navbar */
+        
         .log-entry {
             border-bottom: 1px solid #eee;
             padding: 10px 0;
@@ -52,7 +51,6 @@
                         <a class="nav-link" href="/admin/logs">Attack Logs</a>
                     </li>
                 </ul>
-                <!-- ปุ่ม Back to Target App -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="btn btn-outline-light" href="#"
@@ -83,41 +81,38 @@
                     </tr>
                 </thead>
                 <tbody id="logsTableBody">
-                    <!-- Log entries will be loaded here -->
                     <tr>
                         <td colspan="5" class="text-center">Loading attack logs...</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <!-- Pagination controls would go here if implemented -->
     </div>
 
-    <!-- Bootstrap JS and Popper.js -->
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Helper function to sanitize HTML content
         function sanitizeHTML(str) {
             const element = document.createElement('div');
-            element.innerText = str; // Use textContent to escape HTML entities
+            element.innerText = str; 
             return element.innerHTML;
         }
 
-        // Function to fetch and display logs
+        
         async function fetchLogs() {
             const logsTableBody = document.getElementById('logsTableBody');
-            logsTableBody.innerHTML = '<tr><td colspan="5" class="text-center">Loading attack logs...</td></tr>'; // Show loading indicator
+            logsTableBody.innerHTML = '<tr><td colspan="5" class="text-center">Loading attack logs...</td></tr>'; 
 
             try {
-                const response = await fetch('/api/logs'); // Call the new API endpoint
+                const response = await fetch('/api/logs'); 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const logs = await response.json();
 
-                logsTableBody.innerHTML = ''; // Clear loading indicator
+                logsTableBody.innerHTML = ''; 
 
                 if (logs.length === 0) {
                     const row = logsTableBody.insertRow();
@@ -143,7 +138,7 @@
             }
         }
 
-        // Fetch logs when the page loads
+        
         document.addEventListener('DOMContentLoaded', fetchLogs);
     </script>
 </body>

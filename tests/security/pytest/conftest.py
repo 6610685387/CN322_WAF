@@ -1,11 +1,3 @@
-"""
-conftest.py — shared fixtures และ config สำหรับ WAF security tests
-
-FIX v2:
-  - รับ WAF_URL ได้ทั้ง WAF_BASE และ WAF_URL (backward compat)
-  - เพิ่ม SLEEP_MS default 0.15 เพื่อไม่ให้ rate limit ของ pytest test เอง
-"""
-
 import json
 import os
 import time
@@ -17,13 +9,11 @@ import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# ── Config จาก environment ────────────────────────────────────────────────────
 WAF_BASE = os.environ.get("WAF_BASE", os.environ.get("WAF_URL", "https://localhost"))
 DIRECT_BASE = os.environ.get("DIRECT_BASE", "http://localhost:5001")
 TIMEOUT = int(os.environ.get("TEST_TIMEOUT", "5"))
-SLEEP_MS = float(os.environ.get("TEST_SLEEP_MS", "0.15"))  # FIX: 0.1 → 0.15
+SLEEP_MS = float(os.environ.get("TEST_SLEEP_MS", "0.15"))  
 
-# ── Results dir ───────────────────────────────────────────────────────────────
 RESULTS_DIR = Path(__file__).parent.parent.parent.parent / "tests_result" / "pytest"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -37,7 +27,6 @@ RUN_DIR = RESULTS_DIR / RUN_TIMESTAMP
 RUN_DIR.mkdir(parents=True, exist_ok=True)
 
 
-# ── Fixtures ──────────────────────────────────────────────────────────────────
 
 
 @pytest.fixture(scope="session")
@@ -71,20 +60,17 @@ def result_writer(request):
     ชื่อไฟล์ผลลัพธ์จะตรงกับชื่อ test function โดยอัตโนมัติ
     """
     _store: dict[str, list] = {}
-    _test_name: str = request.node.name  # ชื่อ test function จริงๆ
+    _test_name: str = request.node.name  
 
     def write(name_or_results, results: list = None):
         if results is None:
-            # เรียกแบบใหม่: result_writer(results_list)
+            
             _store[_test_name] = name_or_results
         else:
-            # เรียกแบบเดิม: result_writer("custom_name", results_list)
-            # ยังใช้ชื่อ test function เป็นชื่อไฟล์ แต่บันทึก custom_name ใน JSON
             _store[_test_name] = results
 
     yield write
 
-    # หลัง test: บันทึกผลลัพธ์ลงไฟล์ชื่อเดียวกับ test function
     for name, data in _store.items():
         out_file = RUN_DIR / f"{name}.json"
         with open(out_file, "w", encoding="utf-8") as f:
@@ -110,9 +96,6 @@ def pytest_configure(config):
     config.addinivalue_line("markers", "slow: Tests that take longer than usual")
 
 
-# ── Terminal Summary Hook ─────────────────────────────────────────────────────
-
-
 def pytest_terminal_summary(terminalreporter, exitstatus, config):
     """สรุปผลรวมทั้งหมดแบบ custom ที่ terminal หลัง session จบ"""
     passed = len(terminalreporter.stats.get("passed", []))
@@ -124,7 +107,6 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
     pct_pass = (passed / total * 100) if total > 0 else 0.0
     pct_fail = ((failed + error) / total * 100) if total > 0 else 0.0
 
-    # สี ANSI
     GREEN = "\033[92m"
     RED = "\033[91m"
     YELLOW = "\033[93m"
@@ -165,7 +147,6 @@ def pytest_terminal_summary(terminalreporter, exitstatus, config):
     terminalreporter.write_line(f"  Status:    {STATUS_ICON}")
     terminalreporter.write_line("")
 
-    # แสดงรายชื่อ tests ที่ fail (ถ้ามี)
     failed_items = terminalreporter.stats.get("failed", [])
     error_items = terminalreporter.stats.get("error", [])
     if failed_items or error_items:

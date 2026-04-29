@@ -10,11 +10,6 @@ class DetectionResult(NamedTuple):
 
 
 class XSSDetector:
-    """
-    XSS detector with multi-layer normalization and structured rule scoring.
-    v2: Added .call/.apply, bare on* attributes, indirect invocation, null-byte handling
-    """
-
     RULES: list[tuple[str, int, str]] = [
         # Script tags (highest priority)
         (r"<\s*script\b[^>]*>", 28, "script_open_tag"),
@@ -33,21 +28,21 @@ class XSSDetector:
         (r"\blocation(?:\.href)?\s*=", 18, "location_sink"),
         (r"\bevaluate\s*\(", 20, "evaluate_sink"),
         
-        # Event handlers on tags (comprehensive — covers all HTML5 + legacy events)
+        # Event handlers on tags 
         # Pattern 1: named common events
         (
             r"<[^>]*\bon(?:error|load|click|mouse\w+|key\w+|focus|blur|change|submit|reset|input|drag\w*|pointer\w*|animation\w*|transition\w*|wheel|copy|paste|cut|select|scroll|before|after|dblclick|contextmenu|touch\w+|activate|begin|end|repeat|seek|toggle|start|finish|close|open|play|pause|ended|stalled|suspend|waiting|seeked|seeking|timeupdate|volumechange|message|storage|hashchange|popstate|resize|unload|pageshow|pagehide|online|offline|fullscreen\w*|gotpointercapture|lostpointercapture|invalid|cuechange)\s*=",
             22,
             "event_handler_tag",
         ),
-        # Pattern 2: catch-all for any on<word> event inside a tag (handles unknown/future events)
+        # Pattern 2: catch-all for any on<word> event inside a tag 
         (
             r"<[^>]*\bon[a-z]{2,20}\s*=",
             20,
             "event_handler_catch_all",
         ),
 
-        # Bare on* attribute without enclosing tag (catch-all)
+        # Bare on* attribute without enclosing tag 
         (
             r"\bon[a-z]{2,20}\s*=\s*[\"']?[\(`]",
             18,
@@ -142,7 +137,7 @@ class XSSDetector:
         (r"\bwith\s*\(", 10, "with_statement"),
         (r"\bfunction\s*\*", 8, "generator_function"),
 
-        # Optional chaining invocation (alert?.() / alert?.document?.cookie)
+        # Optional chaining invocation 
         (r"\b(?:alert|prompt|confirm|eval)\s*\?\.", 20, "optional_chain_call"),
         (r"\bdocument\s*\?\.\s*(?:cookie|domain|location|write)", 18, "optional_chain_dom"),
         (r"\bwindow\s*\?\.", 16, "optional_chain_window"),
@@ -184,7 +179,6 @@ class XSSDetector:
         if not raw:
             return 0, []
 
-        # Strip null bytes before normalization
         cleaned = raw.replace("\x00", "").replace("\u0000", "")
         s = recursive_normalize(cleaned)
 
@@ -194,14 +188,12 @@ class XSSDetector:
         for compiled_re, base_score, name in self._compiled:
             matches = compiled_re.findall(s)
             if matches:
-                # Increased bonus for multiple matches (more aggressive)
                 match_bonus = (len(matches) - 1) * 3
                 total += base_score + match_bonus
                 triggered.append(name)
 
-        # --- Enhanced Combo Bonuses ---
         
-        # Script tag with execution functions (very dangerous)
+        # Script tag with execution functions
         if "script_open_tag" in triggered or "script_full" in triggered:
             if any(r in triggered for r in ("eval_call", "dialog_call", "base64_decode", "dom_sink_html", "dom_sink_write")):
                 total += 25
@@ -237,7 +229,7 @@ class XSSDetector:
             total += 15
             triggered.append("combo_multi_obfuscation")
 
-        # SVG-based attack (SVG is powerful attack vector)
+        # SVG-based attack
         if any(r in triggered for r in ("svg_event", "svg_tag", "svg_animate", "embed_tag")):
             if any(r in triggered for r in ("event_handler_tag", "event_handler_catch_all", "bare_event_handler")):
                 total += 15

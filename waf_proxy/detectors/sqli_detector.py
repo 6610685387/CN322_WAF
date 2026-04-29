@@ -5,7 +5,6 @@ from .normalizer import recursive_normalize
 class SQLDetector:
     def __init__(self, threshold: int = 12):
         self.threshold = threshold
-        # รายการกฎ (Regex, Base Score)
         self.rules = [
             # 1. Critical Exfiltration & Execution
             (r"\bunion\b.*\bselect\b", 18),
@@ -112,7 +111,6 @@ class SQLDetector:
         if not input_string:
             return 0
 
-        # *** ส่งผ่าน normalizer ก่อน เพื่อถอด obfuscation ***
         normalized = recursive_normalize(input_string)
 
         total_score = 0
@@ -125,8 +123,6 @@ class SQLDetector:
                 pattern_score = score + max(0, occurrence_bonus)
                 total_score += pattern_score
                 matched_patterns.append((pattern[:40], pattern_score, len(matches)))
-
-        # --- Contextual checks ---
         
         # Quote imbalance (stronger indicator)
         single_quotes = normalized.count("'")
@@ -147,7 +143,7 @@ class SQLDetector:
         if operator_count >= 4:
             total_score += 8
 
-        # Mixed quotes with operators = likely injection
+        # Mixed quotes with operators 
         if re.search(r"['\"].*(?:union|select|insert|update|delete|drop).*['\"]", normalized, re.IGNORECASE | re.DOTALL):
             total_score += 10
 
@@ -163,7 +159,6 @@ class SQLDetector:
         return score >= limit
 
     def analyze(self, input_string: str, threshold: int | None = None) -> dict:
-        """Full analysis — คืน dict พร้อม score, verdict, และ normalized string."""
         score = self.get_score(input_string)
         limit = threshold if threshold is not None else self.threshold
         return {

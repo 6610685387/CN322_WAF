@@ -1,58 +1,35 @@
-// 
-/**
- * k6/stress.js — Stress test สำหรับ WAF
- *
- * FIX v6 (แก้ปัญหา metric ผสม RC-2):
- * ─────────────────────────────────────────────────────────────────
- * ROOT CAUSE (เดิม):
- *   expectedStatuses(200, 302, 403) ไม่รวม 429 → rate-limited requests
- *   นับเป็น http_req_failed และใน passedCount ด้วย
- *   ทำให้ตัวเลขบิดเบือน:
- *     - clean traffic "failed" = 403(WAF FP) + 503/429(rate limit) รวมกัน
- *     - attack "not blocked"   = 200(FN)     + 503/429(rate limit) รวมกัน
- *
- * FIXES:
- *   1. เพิ่ม 429 ใน expectedStatuses → ไม่นับเป็น http_req_failed
- *   2. แยก Counter สำหรับ 429 (rate_limited) ออกจาก WAF metrics
- *   3. Skip rate-limited requests ออกจาก waf_block_rate / waf_fp_rate
- *      → ตัวเลขที่ได้คือ WAF decision จริง ๆ ไม่ถูกปนด้วย rate limit
- *   4. เพิ่ม waf_fp_rate metric เพื่อวัด false positive ใน stress test
- *   5. เพิ่ม POST attack payloads ใน block rate calculation
- * ─────────────────────────────────────────────────────────────────
- */
-
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { Counter, Rate, Trend } from 'k6/metrics';
 import { setResponseCallback, expectedStatuses } from 'k6/http';
 
-// ─── FIX: เพิ่ม 429 → rate limit ไม่นับเป็น http_req_failed ─────────────────
+
 setResponseCallback(expectedStatuses(200, 302, 403, 429));
 
-// ─── Custom Metrics ──────────────────────────────────────────────────────────
-const wafBlockRate   = new Rate('waf_block_rate');      // attack → 403 (WAF block)
-const wafFpRate      = new Rate('waf_fp_rate');         // clean  → 403 (false positive)
-const rateLimited    = new Counter('rate_limited_429'); // requests ที่ถูก rate limit
-const attackBlocked  = new Counter('attack_blocked_403');
-const cleanPassed    = new Counter('clean_passed_200');
-const attackLatency  = new Trend('attack_req_latency_ms', true);
-const cleanLatency   = new Trend('clean_req_latency_ms',  true);
+
+const wafBlockRate = new Rate('waf_block_rate');
+const wafFpRate = new Rate('waf_fp_rate');
+const rateLimited = new Counter('rate_limited_429');
+const attackBlocked = new Counter('attack_blocked_403');
+const cleanPassed = new Counter('clean_passed_200');
+const attackLatency = new Trend('attack_req_latency_ms', true);
+const cleanLatency = new Trend('clean_req_latency_ms', true);
 const networkErrRate = new Rate('network_error_rate');
 
 export const options = {
     stages: [
-        { duration: '30s', target: 10  },   // warm-up
-        { duration: '60s', target: 50  },   // medium load
-        { duration: '60s', target: 100 },   // full stress
-        { duration: '60s', target: 100 },   // soak
-        { duration: '30s', target: 0   },   // ramp down
+        { duration: '30s', target: 10 },
+        { duration: '60s', target: 50 },
+        { duration: '60s', target: 100 },
+        { duration: '60s', target: 100 },
+        { duration: '30s', target: 0 },
     ],
     thresholds: {
-        http_req_duration:    ['p(95)<1000'],  // latency รวม ≤1s
-        clean_req_latency_ms: ['p(95)<600'],   // clean traffic ≤600ms
-        waf_block_rate:       ['rate>0.85'],   // WAF ต้อง block attack ≥85%
-        waf_fp_rate:          ['rate<0.05'],   // WAF FP ต้อง <5%
-        network_error_rate:   ['rate<0.02'],   // network error ≤2%
+        http_req_duration: ['p(95)<1000'],
+        clean_req_latency_ms: ['p(95)<600'],
+        waf_block_rate: ['rate>0.85'],
+        waf_fp_rate: ['rate<0.05'],
+        network_error_rate: ['rate<0.02'],
     },
     insecureSkipTLSVerify: true,
 };
@@ -107,10 +84,10 @@ const ATTACK_PAYLOADS_GET = [
 
 // ─── ATTACK PAYLOADS (POST) ───────────────────────────────────────────────────
 const ATTACK_PAYLOADS_POST = [
-    { url: `${BASE_URL}/login`,  body: { username: "' OR '1'='1",               password: "x" } },
-    { url: `${BASE_URL}/login`,  body: { username: "admin'--",                  password: "x" } },
-    { url: `${BASE_URL}/login`,  body: { username: "<script>alert(1)</script>",  password: "x" } },
-    { url: `${BASE_URL}/login`,  body: { username: "' UNION SELECT 1,2--",       password: "x" } },
+    { url: `${BASE_URL}/login`, body: { username: "' OR '1'='1", password: "x" } },
+    { url: `${BASE_URL}/login`, body: { username: "admin'--", password: "x" } },
+    { url: `${BASE_URL}/login`, body: { username: "<script>alert(1)</script>", password: "x" } },
+    { url: `${BASE_URL}/login`, body: { username: "' UNION SELECT 1,2--", password: "x" } },
     { url: `${BASE_URL}/search`, body: { q: "1 UNION SELECT username,password FROM users--" } },
     { url: `${BASE_URL}/search`, body: { q: "<img src=x onerror=alert(1)>" } },
 ];
@@ -140,7 +117,7 @@ export default function () {
         networkErrRate.add(res.status === 0);
         attackLatency.add(res.timings.duration);
 
-        // FIX: ถ้า rate limited → skip WAF metric (ไม่ใช่ WAF decision)
+
         if (res.status === 429) {
             rateLimited.add(1);
         } else {
@@ -171,13 +148,13 @@ export default function () {
         networkErrRate.add(res.status === 0);
         cleanLatency.add(res.timings.duration);
 
-        // FIX: ถ้า rate limited → skip WAF metric
+
         if (res.status === 429) {
             rateLimited.add(1);
         } else {
             const fp = check(res, { 'clean traffic blocked (FP ❌)': r => r.status === 403 });
             const ok = check(res, { 'clean traffic passed (200 ✅)': r => r.status === 200 });
-            wafFpRate.add(fp ? 1 : 0);    // วัด FP rate จริง (ไม่รวม 429)
+            wafFpRate.add(fp ? 1 : 0);
             if (ok) cleanPassed.add(1);
         }
     }

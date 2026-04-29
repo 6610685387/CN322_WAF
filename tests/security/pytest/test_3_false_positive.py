@@ -1,11 +1,5 @@
 """
 WAF False Positive Evaluation
-==============================
-FIX v2:
-  - ปรับ assertion threshold → FP ≤ 5% (จากเดิม 15%)
-  - เพิ่ม edge cases ที่เคยเป็น FP: "SELECT * FROM documentation"
-  - เพิ่ม edge cases URL, CSS hex color ที่ควรผ่าน
-  - แก้ไขให้ใช้ config จาก environment (WAF_BASE)
 """
 
 import requests
@@ -21,12 +15,8 @@ WAF_BASE = os.environ.get("WAF_BASE", "https://localhost")
 TIMEOUT = 5
 SLEEP_MS = 0.15
 
-# =============================================
-# False Positive Test Cases
-# (text, description, endpoint_template)
-# =============================================
 FP_CASES = [
-    # ── SQL keywords ในประโยคภาษาอังกฤษธรรมดา ────────────────────────────────
+    # ── SQL keywords ────────────────────────────────────────────────────
     ("WHERE is the gym?", "ถามทิศทาง - WHERE", "/search?q={}"),
     ("Can I SELECT this item please", "คำขอ - SELECT", "/search?q={}"),
     ("UPDATE me on the latest news", "อัพเดต - UPDATE", "/search?q={}"),
@@ -41,30 +31,30 @@ FP_CASES = [
     ("UNION members meeting at 9am", "การประชุม - UNION", "/search?q={}"),
     ("GROUP BY interest or department", "จัดกลุ่ม - GROUP BY", "/search?q={}"),
     ("I want to JOIN the club", "สมาชิก - JOIN", "/search?q={}"),
-    # ── FIX: SELECT * FROM patterns ที่เคยเป็น FP ────────────────────────────
+    
     (
         "SELECT * FROM documentation",
         "SELECT * FROM ในเอกสาร tech",
         "/search?q={}",
-    ),  # FIX: เคย FP
+    ),  
     (
         "SQL SELECT FROM WHERE tutorial",
         "SQL tutorial keyword",
         "/search?q={}",
-    ),  # FIX: เคย FP
+    ), 
     ("how to use SELECT FROM in SQL", "SQL tutorial คำถาม", "/search?q={}"),
     # ── ภาษาไทย ──────────────────────────────────────────────────────────────
     ("ฉันอยากให้อัปเดตข้อมูลด้วย", "ภาษาไทย - อัปเดต", "/search?q={}"),
     ("ลบออเดอร์เก่าออกให้หน่อย", "ภาษาไทย - ลบ", "/search?q={}"),
     ("เลือกสินค้าที่ดีที่สุดให้หน่อย", "ภาษาไทย - เลือก", "/search?q={}"),
-    # ── HTML-like แต่ปลอดภัย ─────────────────────────────────────────────────
+    # ── HTML-like ─────────────────────────────────────────────────────────────
     ("score > 90 and < 100", "เปรียบเทียบตัวเลข", "/search?q={}"),
     ("I love you <3 so much", "หัวใจ <3", "/search?q={}"),
     ("file.txt <-> database sync", "สัญลักษณ์ arrow", "/search?q={}"),
     ("ratio 1:2 or 3:4", "อัตราส่วน", "/search?q={}"),
     ("2+2=4 and 3*3=9", "สูตรคณิตศาสตร์", "/search?q={}"),
     ("Visit us at http://localhost:80/", "URL ธรรมดา", "/search?q={}"),
-    # ── FIX: CSS Hex color ที่เดิมอาจโดน 0x pattern ─────────────────────────
+    # ── FIX: CSS Hex color ───────────────────────────────────────────────────
     ("CSS color #FF5733 for the button", "CSS hex color #FF5733", "/search?q={}"),
     ("background: #1a2b3c in dark mode", "CSS hex #1a2b3c", "/search?q={}"),
     # ── Username / Login ─────────────────────────────────────────────────────
@@ -72,14 +62,14 @@ FP_CASES = [
     ("user_name_123", "Username underscore", "/login?username={}"),
     ("first.last@email.com", "Email format", "/login?username={}"),
     ("my password is secure", "ข้อความรหัสผ่าน", "/login?username={}"),
-    # ── Special chars ทั่วไป ─────────────────────────────────────────────────
+    # ── Special chars ──────────────────────────────────────────────────────────
     ("C++ programming language", "C++ in search", "/search?q={}"),
     ("price: $100 or less", "ราคาสินค้า", "/search?q={}"),
     ("50% off sale", "เปอร์เซ็นต์", "/search?q={}"),
     ("rock & roll music", "& ในชื่อเพลง", "/search?q={}"),
     ("Tom's favorite book", "apostrophe ปกติ", "/search?q={}"),
     ('He said "Hello World"', "double quote ปกติ", "/search?q={}"),
-    # ── Security / Tech keywords ที่ปลอดภัย ──────────────────────────────────
+    # ── Security / Tech keywords ───────────────────────────────────────────────
     ("script writing tips", "script ในบริบท writing", "/search?q={}"),
     ("shell script tutorial", "shell script tutorial", "/search?q={}"),
     ("CSS selector tutorial", "CSS selector", "/search?q={}"),
