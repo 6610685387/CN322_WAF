@@ -123,7 +123,7 @@ docker-compose up --build
 | Service         | URL                           | หน้าที่                  |
 | --------------- | ----------------------------- | ------------------------ |
 | WAF             | `https://localhost:5000/`     | หน้าเว็บหลักผ่าน WAF     |
-| Web App         | `https://localhost:5001/`     | หน้าเว็บหลักผ่าน         |
+| Web Application         | `https://localhost:5001/`     | หน้าเว็บหลักผ่าน         |
 | Admin Dashboard | `http://localhost:5005/admin` | ดู Logs และจัดการ IP Ban |
 
 ---
